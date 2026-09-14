@@ -427,3 +427,13 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# Template source files (licensed, not part of the site)
+resource-tmp-folder/
+
+# Local SMTP credentials
+includes/mail-config.php
+
+
+# Local Claude Code preview configuration (machine-specific paths)
+.claude/

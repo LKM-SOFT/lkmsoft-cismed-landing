@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /actions/
+Disallow: /includes/
+Disallow: /libraries/
+Disallow: /tools/
+Disallow: /coming-soon
+
+Sitemap: https://cismed.mx/sitemap.xml

@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="600" viewBox="0 0 640 600" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <!-- Temporary mockup of several doctors' schedules side by side. Replace with a real screenshot. -->
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#06284B" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+
+  <rect x="20" y="16" width="600" height="560" rx="18" fill="#fff" filter="url(#shadow)"/>
+
+  <text x="48" y="62" font-size="20" font-weight="700" fill="#06284B">Agendas de la clínica</text>
+  <text x="48" y="84" font-size="13" fill="#64748B">Hoy · 3 médicos</text>
+
+  <!-- Doctor headers -->
+  <g font-size="13">
+    <circle cx="146" cy="130" r="18" fill="#D5EFFF"/>
+    <text x="146" y="135" font-size="12" font-weight="700" fill="#0072E8" text-anchor="middle">PR</text>
+    <text x="146" y="170" font-weight="600" fill="#06284B" text-anchor="middle">Dra. P. Ruiz</text>
+    <text x="146" y="188" font-size="12" fill="#64748B" text-anchor="middle">Pediatría</text>
+
+    <circle cx="322" cy="130" r="18" fill="#E6F8F1"/>
+    <text x="322" y="135" font-size="12" font-weight="700" fill="#00B67A" text-anchor="middle">AT</text>
+    <text x="322" y="170" font-weight="600" fill="#06284B" text-anchor="middle">Dr. A. Torres</text>
+    <text x="322" y="188" font-size="12" fill="#64748B" text-anchor="middle">Medicina general</text>
+
+    <circle cx="498" cy="130" r="18" fill="#FCE7F3"/>
+    <text x="498" y="135" font-size="12" font-weight="700" fill="#BE185D" text-anchor="middle">LV</text>
+    <text x="498" y="170" font-weight="600" fill="#06284B" text-anchor="middle">Dra. L. Vega</text>
+    <text x="498" y="188" font-size="12" fill="#64748B" text-anchor="middle">Ginecología</text>
+  </g>
+
+  <!-- Grid -->
+  <g stroke="#EEF2F6">
+    <line x1="60" y1="206" x2="590" y2="206"/>
+    <line x1="60" y1="276" x2="590" y2="276"/>
+    <line x1="60" y1="346" x2="590" y2="346"/>
+    <line x1="60" y1="416" x2="590" y2="416"/>
+    <line x1="60" y1="486" x2="590" y2="486"/>
+    <line x1="234" y1="206" x2="234" y2="552"/>
+    <line x1="410" y1="206" x2="410" y2="552"/>
+  </g>
+  <g font-size="11" fill="#94A3B8">
+    <text x="40" y="202">09:00</text>
+    <text x="40" y="272">10:00</text>
+    <text x="40" y="342">11:00</text>
+    <text x="40" y="412">12:00</text>
+    <text x="40" y="482">13:00</text>
+  </g>
+
+  <!-- Appointments -->
+  <g font-size="12">
+    <rect x="66" y="212" width="160" height="58" rx="8" fill="#EAF4FF"/>
+    <rect x="66" y="212" width="4" height="58" rx="2" fill="#0072E8"/>
+    <text x="80" y="236" font-weight="600" fill="#06284B">José H.</text>
+    <text x="80" y="254" fill="#3A5A7C">Control de crecimiento</text>
+
+    <rect x="66" y="352" width="160" height="58" rx="8" fill="#EAF4FF"/>
+    <rect x="66" y="352" width="4" height="58" rx="2" fill="#0072E8"/>
+    <text x="80" y="376" font-weight="600" fill="#06284B">Sofía L.</text>
+    <text x="80" y="394" fill="#3A5A7C">Vacunación</text>
+
+    <rect x="242" y="282" width="160" height="58" rx="8" fill="#E6F8F1"/>
+    <rect x="242" y="282" width="4" height="58" rx="2" fill="#00B67A"/>
+    <text x="256" y="306" font-weight="600" fill="#06284B">Ana M.</text>
+    <text x="256" y="324" fill="#2F6B55">Consulta general</text>
+
+    <rect x="242" y="422" width="160" height="58" rx="8" fill="#FFF7E6"/>
+    <rect x="242" y="422" width="4" height="58" rx="2" fill="#F59E0B"/>
+    <text x="256" y="446" font-weight="600" fill="#06284B">Carlos P.</text>
+    <text x="256" y="464" fill="#B45309">Reprogramada</text>
+
+    <rect x="418" y="212" width="160" height="128" rx="8" fill="#FDF2F8"/>
+    <rect x="418" y="212" width="4" height="128" rx="2" fill="#DB2777"/>
+    <text x="432" y="236" font-weight="600" fill="#06284B">María G.</text>
+    <text x="432" y="254" fill="#9D174D">Control prenatal</text>
+
+    <rect x="418" y="422" width="160" height="58" rx="8" fill="none" stroke="#0072E8" stroke-dasharray="5 4"/>
+    <text x="498" y="456" font-weight="600" fill="#0072E8" text-anchor="middle">+ Agendar</text>
+  </g>
+
+  <!-- Reschedule with another doctor hint -->
+  <path d="M226 440 C 232 440, 236 440, 242 446" stroke="#F59E0B" stroke-width="2" fill="none" stroke-dasharray="3 3"/>
+</svg>

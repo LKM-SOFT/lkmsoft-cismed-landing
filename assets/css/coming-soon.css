@@ -1,0 +1,55 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	height: 100vh;
+}
+
+#suffle {
+	display: block;
+	position: fixed;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	z-index: -999;
+	height: 100vh;
+	width: 100%;
+}
+
+#suffle li {
+	display: block;
+	list-style: none;
+	z-index: -30;
+	position: fixed;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+}
+
+#suffle a {
+	width: 100%;
+	height: 100vh;
+	display: block;
+}
+
+#suffle img {
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  opacity:0;
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  width: 100vw;
+	height: 100vh;
+}
+
+#suffle img.opaque {
+  opacity:1;
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=1);
+}

@@ -1,0 +1,21 @@
+# Custom "page not found" page
+ErrorDocument 404 /404.php
+
+# Redirect www to the canonical domain without www (https://cismed.mx)
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www\.cismed\.mx$ [NC]
+RewriteRule ^(.*)$ https://cismed.mx/$1 [R=301,L]
+
+#Ocultar la extension .php
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^/]+)/$ $1.php
+RewriteRule ^([^/]+)/([^/]+)/$ /$1/$2.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/)$
+RewriteRule (.*)$ /$1/ [R=301,L]

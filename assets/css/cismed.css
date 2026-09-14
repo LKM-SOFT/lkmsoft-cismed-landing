@@ -1,0 +1,1181 @@
+/*==============================================================================
+    CISMed landing - site styles
+    Loaded after the Curoxa template stylesheet (assets/css/template/style.css).
+    Brand colors are defined as RGB triplets to match the template variables,
+    so they work with rgba(var(--main-color), alpha).
+==============================================================================*/
+
+/*
+    1. Brand tokens
+    2. Accessibility
+    3. Brand logo
+    4. Header
+    5. Shared components
+    6. Home - hero
+    7. Home - highlights
+    8. Home - modules
+    9. Home - specialties
+    10. Home - audiences
+    11. Home - call to action
+    12. Inner pages - page header
+    13. Features page
+    14. Specialties page
+    15. Contact page
+    16. FAQ page
+    17. Legal pages
+    18. Not found page
+    19. WhatsApp
+*/
+
+/**=====================
+  1. Brand tokens
+==========================**/
+:root {
+  --main-color: 0, 114, 232;
+  --main-light: 213, 239, 255;
+  --accent-color: 0, 182, 122;
+  --secondary-color: 6, 40, 75;
+  --content-color: 58, 58, 58;
+  --border-color: 239, 239, 239;
+  /* Darker brand blue for small text: keeps WCAG AA contrast (4.5:1) on tinted backgrounds. */
+  --main-text-color: 0, 94, 194;
+}
+
+/**=====================
+  2. Accessibility
+==========================**/
+/* Entrance animations (AOS) start off-screen; never let them create horizontal scroll. */
+html,
+body {
+  overflow-x: clip;
+}
+
+.skip-link:focus {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 1000;
+  padding: 10px 18px;
+  border-radius: 25px;
+  background-color: rgba(var(--main-color), 1);
+  color: rgba(var(--white), 1);
+}
+
+.theme-title .subtitle,
+.home-content .subtitle,
+.navbar-menu .menu-item.active,
+.breadcrumb .breadcrumb-item.active {
+  color: rgba(var(--main-text-color), 1);
+}
+
+:focus-visible {
+  outline: 2px solid rgba(var(--main-color), 1);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/**=====================
+  3. Brand logo
+==========================**/
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 1;
+}
+
+.brand-mark img {
+  width: clamp(36px, 2.9vw, 44px);
+  height: auto;
+  margin: 0 !important;
+}
+
+.brand-mark .brand-name {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(22px, 1.9vw, 28px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: rgba(var(--secondary-color), 1);
+}
+
+.brand-mark .brand-name span {
+  color: rgba(var(--main-color), 1);
+}
+
+.brand-mark-light .brand-name,
+.brand-mark-light .brand-name span {
+  color: rgba(var(--white), 1);
+}
+
+.brand-mark-light .brand-name span {
+  opacity: 0.8;
+}
+
+/**=====================
+  4. Header
+==========================**/
+header .brand-logo img {
+  height: auto;
+}
+
+/* Spanish uses sentence case: undo the template's capitalize. */
+h1,
+.navbar-menu .menu-item {
+  text-transform: none;
+}
+
+header .right-btns .btn-main > span > span {
+  padding: 0;
+  background: none;
+}
+
+header .menu-btn {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: rgba(var(--black), 1);
+}
+
+/* Off-canvas menu: keep its links out of the keyboard tab order while it is closed. */
+@media (max-width: 1199px) {
+  .navbar-menu .menu-items {
+    visibility: hidden;
+    transition: left 0.3s ease-out, visibility 0s linear 0.3s;
+  }
+
+  .navbar-menu .menu-items.open {
+    visibility: visible;
+    transition: left 0.3s ease-out, visibility 0s;
+  }
+
+  .navbar-menu .menu-pill {
+    display: none;
+  }
+}
+
+/* Desktop: logo left, centered iOS-style segmented navigation, action button right. */
+@media (min-width: 1200px) {
+  header#header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+
+  header#header .brand-logo {
+    justify-self: start;
+  }
+
+  header#header .navbar-menu {
+    justify-self: center;
+  }
+
+  header#header .right-btns {
+    justify-self: end;
+    margin-left: 0;
+  }
+
+  .navbar-menu .menu-items {
+    gap: 2px;
+    padding: 5px;
+    border: 1px solid rgba(var(--main-color), 0.12);
+    border-radius: 50px;
+    background-color: rgba(var(--main-color), 0.06);
+  }
+
+  .navbar-menu .menu-link-item {
+    position: relative;
+    z-index: 1;
+  }
+
+  .navbar-menu .menu-items .menu-item.first-item {
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2;
+    white-space: nowrap;
+    color: rgba(var(--secondary-color), 1);
+    transition: color 0.3s ease;
+  }
+
+  .navbar-menu .menu-items > li:hover > a.menu-item {
+    color: rgba(var(--main-text-color), 1) !important;
+  }
+
+  .navbar-menu .menu-items > li > a.menu-item.active,
+  .navbar-menu .menu-items > li:hover > a.menu-item.active {
+    color: rgba(var(--white), 1) !important;
+  }
+
+  /* Page load: the active link carries the pill look itself, so nothing moves or flickers. */
+  .navbar-menu .menu-items .menu-item.first-item.active,
+  .navbar-menu .menu-pill {
+    background: linear-gradient(180deg, rgba(var(--main-color), 1) 0%, rgba(var(--main-text-color), 1) 100%);
+    box-shadow: 0 6px 16px -6px rgba(var(--main-text-color), 0.7);
+  }
+
+  .navbar-menu .menu-pill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-radius: 50px;
+    opacity: 0;
+    pointer-events: none;
+    /* The template animates every menu <li>; the pill is moved only by main.js (Web Animations API). */
+    transition: none;
+  }
+
+  /* After a click: the sliding pill takes over from the static highlight until the next page loads. */
+  .navbar-menu .menu-items.is-sliding .menu-pill {
+    opacity: 1;
+  }
+
+  .navbar-menu .menu-items.is-sliding .menu-item.first-item.active {
+    background: none;
+    box-shadow: none;
+  }
+}
+
+/**=====================
+  5. Shared components
+==========================**/
+.theme-title .subtitle svg,
+.home-content .subtitle svg {
+  width: 16px;
+  height: 16px;
+}
+
+.check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: rgba(var(--content-color), 1);
+}
+
+.check-list li + li {
+  margin-top: 14px;
+}
+
+.check-list svg {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  padding: 4px;
+  margin-top: 1px;
+  border-radius: 50%;
+  background-color: rgba(var(--accent-color), 0.12);
+  color: rgba(var(--accent-color), 1);
+  stroke-width: 3;
+}
+
+/**=====================
+  6. Home - hero
+==========================**/
+.hero-section {
+  padding-bottom: clamp(110px, 10vw, 170px);
+}
+
+.hero-section .home-content h1 span {
+  color: rgba(var(--main-color), 1);
+}
+
+.hero-mockup {
+  position: relative;
+  padding: 24px 0;
+}
+
+.hero-mockup > img {
+  border-radius: 0 !important;
+}
+
+.hero-float-card {
+  position: absolute;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px 12px 12px;
+  border-radius: 14px;
+  background-color: rgba(var(--white), 1);
+  box-shadow: 0 18px 40px -12px rgba(var(--secondary-color), 0.25);
+}
+
+.hero-float-card strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(var(--secondary-color), 1);
+}
+
+.hero-float-card small {
+  display: block;
+  font-size: 13px;
+  color: rgba(var(--content-color), 0.8);
+}
+
+.hero-float-card-top {
+  top: 0;
+  right: -10px;
+}
+
+.hero-float-card-bottom {
+  bottom: 0;
+  left: -20px;
+}
+
+.float-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+}
+
+.float-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.bg-success-soft {
+  background-color: rgba(var(--accent-color), 0.12);
+  color: rgba(var(--accent-color), 1);
+}
+
+.bg-primary-soft {
+  background-color: rgba(var(--main-color), 0.1);
+  color: rgba(var(--main-color), 1);
+}
+
+@media (max-width: 1399px) {
+  .hero-float-card-top { right: 0; }
+  .hero-float-card-bottom { left: 0; }
+}
+
+/**=====================
+  7. Home - highlights
+==========================**/
+.highlights-section {
+  position: relative;
+  z-index: 2;
+  margin-top: clamp(-90px, -6vw, -50px);
+}
+
+.highlights-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding: clamp(20px, 2.5vw, 32px);
+  border-radius: clamp(16px, 2vw, 24px);
+  background-color: rgba(var(--white), 1);
+  box-shadow: 0 30px 60px -20px rgba(var(--secondary-color), 0.15);
+}
+
+.highlights-strip li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.highlights-strip h2 {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: rgba(var(--secondary-color), 1);
+}
+
+.highlights-strip p {
+  margin-top: 4px;
+  font-size: 14px;
+  color: rgba(var(--content-color), 0.9);
+}
+
+.highlight-icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background-color: rgba(var(--main-color), 0.08);
+  color: rgba(var(--main-color), 1);
+}
+
+.highlight-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 1199px) {
+  .highlights-strip { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 575px) {
+  .highlights-strip { grid-template-columns: 1fr; gap: 18px; }
+}
+
+/**=====================
+  8. Home - modules
+==========================**/
+.modules-section {
+  background: transparent;
+}
+
+.module-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: inherit;
+}
+
+.category-style2 .module-card {
+  padding: clamp(22px, 2vw, 32px);
+}
+
+.module-card p {
+  flex-grow: 1;
+  color: rgba(var(--content-color), 1);
+}
+
+.module-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  color: rgba(var(--main-text-color), 1);
+}
+
+.module-link svg {
+  width: 18px;
+  transition: transform 0.3s ease;
+}
+
+.module-card:hover .module-link svg {
+  transform: translateX(4px);
+}
+
+/**=====================
+  9. Home - specialties
+==========================**/
+.specialties-section {
+  background-color: rgba(var(--white), 1);
+}
+
+.specialty-card {
+  display: block;
+  height: 100%;
+  padding: clamp(22px, 2vw, 30px);
+  border: 1px solid #e6f1fd;
+  border-radius: clamp(16px, 2vw, 22px);
+  background: linear-gradient(180deg, #f5faff 0%, rgba(var(--white), 1) 100%);
+  color: inherit;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.specialty-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 50px -20px rgba(var(--main-color), 0.3);
+}
+
+.specialty-card h3 {
+  margin: 18px 0 8px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 600;
+  color: rgba(var(--secondary-color), 1);
+}
+
+.specialty-card p {
+  color: rgba(var(--content-color), 1);
+}
+
+.specialty-icon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: rgba(var(--main-color), 1);
+  color: rgba(var(--white), 1);
+}
+
+.specialty-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+/**=====================
+  10. Home - audiences
+==========================**/
+.audiences-section .theme-title {
+  text-align: left;
+}
+
+.audiences-section .why-choose-listing .icon-box {
+  background-color: rgba(var(--white), 1);
+}
+
+.audiences-section .why-choose-listing p {
+  color: rgba(var(--content-color), 1);
+}
+
+/**=====================
+  11. Home - call to action
+==========================**/
+.cta-section .consult-box {
+  background-color: #e6f1fd;
+}
+
+.cta-section .btn-sec {
+  margin-bottom: 0 !important;
+}
+
+.contact-box-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  background-color: rgba(var(--main-color), 0.1);
+  color: rgba(var(--main-color), 1);
+}
+
+.contact-box a {
+  font-weight: 500;
+  word-break: break-all;
+  color: rgba(var(--main-text-color), 1);
+}
+
+/**=====================
+  12. Inner pages - page header
+==========================**/
+.breadcrumb-section .breadcrumb svg {
+  width: 16px;
+  height: 16px;
+}
+
+.breadcrumb-section .breadcrumb-titles h1 {
+  color: rgba(var(--secondary-color), 1);
+}
+
+.breadcrumb-section .breadcrumb-titles p {
+  color: rgba(var(--content-color), 1);
+}
+
+/* Anchored sections must not hide behind the sticky header. */
+[id] {
+  scroll-margin-top: 110px;
+}
+
+/**=====================
+  13. Features page
+==========================**/
+.module-nav {
+  position: relative;
+  z-index: 2;
+  margin-top: -28px;
+}
+
+.module-nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 20px;
+  background-color: rgba(var(--white), 1);
+  box-shadow: 0 20px 50px -20px rgba(var(--secondary-color), 0.18);
+}
+
+.module-nav-list a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(var(--secondary-color), 1);
+  background-color: rgba(var(--main-color), 0.05);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.module-nav-list a:hover {
+  background-color: rgba(var(--main-color), 1);
+  color: rgba(var(--white), 1);
+}
+
+.module-nav-list svg {
+  width: 17px;
+  height: 17px;
+}
+
+.feature-block {
+  padding-top: clamp(50px, 6vw, 100px);
+}
+
+.feature-block .theme-title {
+  margin-bottom: 24px;
+}
+
+.feature-block .theme-title h2 {
+  color: rgba(var(--secondary-color), 1);
+  font-weight: 600;
+}
+
+.check-list-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 24px;
+}
+
+.check-list-columns li + li {
+  margin-top: 0;
+}
+
+@media (max-width: 575px) {
+  .check-list-columns { grid-template-columns: 1fr; }
+}
+
+.feature-visual {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  min-height: 340px;
+  padding: 40px 24px;
+  border-radius: clamp(20px, 2vw, 28px);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(var(--accent-color), 0.12), transparent 45%),
+    radial-gradient(circle at 80% 85%, rgba(var(--main-color), 0.16), transparent 50%),
+    linear-gradient(160deg, #f2f8ff 0%, #e6f1fd 100%);
+  overflow: hidden;
+}
+
+.feature-visual-icon {
+  display: grid;
+  place-items: center;
+  width: 110px;
+  height: 110px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, rgba(var(--main-color), 1), rgba(var(--accent-color), 1));
+  color: rgba(var(--white), 1);
+  box-shadow: 0 24px 50px -16px rgba(var(--main-color), 0.55);
+}
+
+.feature-visual-icon svg {
+  width: 52px;
+  height: 52px;
+}
+
+.feature-visual-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.feature-visual-tags li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(var(--secondary-color), 1);
+  background-color: rgba(var(--white), 1);
+  box-shadow: 0 12px 30px -14px rgba(var(--secondary-color), 0.3);
+}
+
+.feature-visual-tags svg {
+  width: 16px;
+  height: 16px;
+  color: rgba(var(--accent-color), 1);
+  stroke-width: 3;
+}
+
+/**=====================
+  14. Specialties page
+==========================**/
+.specialty-detail-card {
+  height: 100%;
+  padding: clamp(24px, 3vw, 40px);
+  border: 1px solid #e6f1fd;
+  border-radius: clamp(18px, 2vw, 24px);
+  background-color: rgba(var(--white), 1);
+  box-shadow: 0 30px 60px -30px rgba(var(--main-color), 0.18);
+}
+
+/* Not a <header> element: the template styles every <header> as the site header. */
+.specialty-detail-heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.specialty-detail-card h2 {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(24px, 2.4vw, 32px);
+  font-weight: 600;
+  color: rgba(var(--secondary-color), 1);
+}
+
+.specialty-detail-card > p {
+  margin-bottom: 20px;
+  color: rgba(var(--content-color), 1);
+}
+
+.specialties-coming {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 32px;
+  padding: 20px 24px;
+  border: 1px dashed rgba(var(--main-color), 0.35);
+  border-radius: 18px;
+  background: linear-gradient(160deg, #f2f8ff 0%, #e6f1fd 100%);
+}
+
+.specialties-coming p {
+  margin: 0;
+  color: rgba(var(--content-color), 1);
+}
+
+.specialties-coming strong {
+  color: rgba(var(--secondary-color), 1);
+}
+
+.specialties-coming-icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  color: rgba(var(--white), 1);
+  background: linear-gradient(135deg, rgba(var(--main-color), 1), rgba(var(--accent-color), 1));
+}
+
+.specialties-coming-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.specialties-note {
+  margin-top: 32px;
+  text-align: center;
+  color: rgba(var(--content-color), 1);
+}
+
+.specialties-note a {
+  font-weight: 600;
+  color: rgba(var(--main-text-color), 1);
+}
+
+/**=====================
+  15. Contact page
+==========================**/
+.contact-section .contact-details .contact-wrap a,
+.contact-form .form-check-label a {
+  font-weight: 500;
+  color: rgba(var(--main-text-color), 1);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.contact-form .form-intro {
+  margin: -12px 0 24px;
+  font-size: 14px;
+  color: rgba(var(--content-color), 0.85);
+}
+
+.contact-form .form-control,
+.contact-form .form-select {
+  min-height: 50px;
+}
+
+.contact-form .form-check-input {
+  width: 1.2em;
+  height: 1.2em;
+  margin-top: 0.15em;
+  cursor: pointer;
+}
+
+.contact-form .form-check-label {
+  color: rgba(var(--content-color), 1);
+  cursor: pointer;
+}
+
+.contact-form .form-check .invalid-feedback {
+  margin-left: -1.5em;
+}
+
+/* Kept off-screen instead of display:none, which some bots detect. */
+.form-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+button.btn-main {
+  cursor: pointer;
+}
+
+button.btn-main:disabled {
+  cursor: progress;
+  opacity: 0.75;
+  transform: none;
+}
+
+.form-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border-radius: 12px;
+}
+
+.form-alert.d-none {
+  display: none !important;
+}
+
+.form-alert svg {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+}
+
+.form-alert p {
+  margin: 0;
+}
+
+.alert-success.form-alert strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+/**=====================
+  16. FAQ page
+==========================**/
+.faq-page .faq-group + .faq-group {
+  margin-top: clamp(36px, 4vw, 56px);
+}
+
+.faq-page .faq-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(22px, 2vw, 28px);
+  font-weight: 600;
+  color: rgba(var(--secondary-color), 1);
+}
+
+.faq-page .faq-title svg {
+  width: 26px;
+  height: 26px;
+  color: rgba(var(--main-color), 1);
+}
+
+.faq-sidebar {
+  position: sticky;
+  top: 110px;
+}
+
+.faq-topics,
+.faq-help-box {
+  padding: 24px;
+  border: 1px solid #e6f1fd;
+  border-radius: 18px;
+  background-color: rgba(var(--white), 1);
+}
+
+.faq-topics > span {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(var(--content-color), 0.8);
+}
+
+.faq-topics a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  color: rgba(var(--secondary-color), 1);
+  transition: background-color 0.3s ease;
+}
+
+.faq-topics a:hover {
+  background-color: rgba(var(--main-color), 0.06);
+}
+
+.faq-topics svg {
+  width: 18px;
+  height: 18px;
+  color: rgba(var(--main-color), 1);
+}
+
+.faq-help-box {
+  margin-top: 24px;
+  background: linear-gradient(160deg, #f2f8ff 0%, #e6f1fd 100%);
+}
+
+.faq-help-box h2 {
+  margin-bottom: 8px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: rgba(var(--secondary-color), 1);
+}
+
+.faq-help-box p {
+  margin-bottom: 20px;
+  color: rgba(var(--content-color), 1);
+}
+
+.faq-help-box p a {
+  font-weight: 500;
+  color: rgba(var(--main-text-color), 1);
+}
+
+@media (max-width: 991px) {
+  .faq-sidebar { position: static; }
+  .faq-topics { display: none; }
+}
+
+/**=====================
+  17. Legal pages
+==========================**/
+.legal-section .list-group {
+  top: 110px;
+}
+
+.legal-section .list-group > span {
+  display: block;
+}
+
+.legal-content article {
+  padding-top: 12px;
+}
+
+.legal-content article + article {
+  margin-top: clamp(24px, 3vw, 36px);
+}
+
+.legal-content h2 {
+  color: rgba(var(--secondary-color), 1);
+  font-weight: 600;
+}
+
+.legal-content p,
+.legal-content li {
+  line-height: 1.7;
+  color: rgba(var(--content-color), 1);
+}
+
+.legal-content a {
+  font-weight: 500;
+  color: rgba(var(--main-text-color), 1);
+}
+
+.legal-updated {
+  font-size: 14px;
+}
+
+/**=====================
+  18. Not found page
+==========================**/
+.not-found-section {
+  padding: clamp(160px, 14vw, 220px) 0 clamp(60px, 7vw, 100px);
+  background: linear-gradient(180deg, #e6f1fd 0%, rgba(249, 248, 246, 1) 100%);
+}
+
+.not-found-content {
+  text-align: center;
+}
+
+.not-found-content > p {
+  max-width: 620px;
+  margin: 0 auto 24px;
+  color: rgba(var(--content-color), 1);
+}
+
+.not-found-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.not-found-content > .not-found-code {
+  max-width: none;
+  margin: 0 0 8px;
+  text-align: center;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(110px, 16vw, 220px);
+  font-weight: 800;
+  line-height: 1;
+  background: linear-gradient(135deg, rgba(var(--main-color), 1), rgba(var(--accent-color), 1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.not-found-section h1 {
+  margin-bottom: 14px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(28px, 3vw, 42px);
+  color: rgba(var(--secondary-color), 1);
+}
+
+.not-found-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.not-found-links a {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-weight: 500;
+  color: rgba(var(--secondary-color), 1);
+  background-color: rgba(var(--white), 1);
+  box-shadow: 0 8px 24px -12px rgba(var(--secondary-color), 0.25);
+}
+
+.not-found-links a:hover {
+  color: rgba(var(--main-text-color), 1);
+}
+
+/**=====================
+  19. WhatsApp
+==========================**/
+.whatsapp-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.whatsapp-float {
+  position: fixed;
+  right: 18px;
+  bottom: clamp(78px, 6vw, 92px);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 50px;
+  color: #fff;
+  background-color: #25d366;
+  box-shadow: 0 12px 30px -8px rgba(37, 211, 102, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background-color: #25d366;
+  animation: whatsapp-pulse 2.4s ease-out infinite;
+}
+
+/* Keep the floating button out of the way while the mobile menu is open. */
+.menu-open .whatsapp-float {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.whatsapp-float:hover,
+.whatsapp-float:focus-visible {
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px -8px rgba(37, 211, 102, 0.75);
+}
+
+.whatsapp-float .whatsapp-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.whatsapp-float-label {
+  display: none;
+  padding-right: 6px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+@media (min-width: 992px) {
+  .whatsapp-float:hover .whatsapp-float-label,
+  .whatsapp-float:focus-visible .whatsapp-float-label {
+    display: inline;
+  }
+}
+
+@keyframes whatsapp-pulse {
+  0% { transform: scale(1); opacity: 0.55; }
+  70%, 100% { transform: scale(1.45); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-float::before { animation: none; }
+}
+
+/* WhatsApp buttons: the outline style gets the WhatsApp green icon. */
+.btn-whatsapp .whatsapp-icon {
+  color: #1da851;
+}
+
+.contact-box .contact-box-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  word-break: normal;
+}
+
+.contact-box .contact-box-whatsapp .whatsapp-icon {
+  color: #1da851;
+}
+
+.cta-section .btn-sec {
+  flex-wrap: wrap;
+}
+
+.contact-details .contact-wrap-whatsapp > .whatsapp-icon {
+  width: clamp(50px, 3.5vw, 56px);
+  height: clamp(50px, 3.5vw, 56px);
+  padding: 14px;
+  border-radius: clamp(10px, 1vw, 15px);
+  color: #1da851;
+  background-color: rgba(37, 211, 102, 0.1);
+}
+
+.faq-help-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}

@@ -1,0 +1,2 @@
+# PHP partials and configuration (including SMTP credentials): never served directly.
+Require all denied

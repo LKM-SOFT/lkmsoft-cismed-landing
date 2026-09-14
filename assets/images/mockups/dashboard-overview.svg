@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <!-- Temporary mockup of the CISMed daily dashboard. Replace with a real screenshot. -->
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#06284B" flood-opacity="0.10"/>
+    </filter>
+    <clipPath id="window">
+      <rect x="20" y="16" width="920" height="600" rx="18"/>
+    </clipPath>
+  </defs>
+
+  <rect x="20" y="16" width="920" height="600" rx="18" fill="#fff" filter="url(#shadow)"/>
+  <g clip-path="url(#window)">
+    <!-- Title bar -->
+    <rect x="20" y="16" width="920" height="42" fill="#F1F5F9"/>
+    <circle cx="46" cy="37" r="6" fill="#FF6159"/>
+    <circle cx="66" cy="37" r="6" fill="#FFBD2E"/>
+    <circle cx="86" cy="37" r="6" fill="#28C840"/>
+
+    <!-- Sidebar -->
+    <rect x="20" y="58" width="190" height="558" fill="#06284B"/>
+    <rect x="40" y="80" width="30" height="30" rx="8" fill="#0072E8"/>
+    <path d="M52 87h6v6h6v6h-6v6h-6v-6h-6v-6h6z" fill="#fff"/>
+    <text x="80" y="101" font-size="17" font-weight="700" fill="#fff">CISMed</text>
+
+    <rect x="32" y="136" width="166" height="38" rx="9" fill="#0072E8"/>
+    <text x="52" y="160" font-size="14" fill="#fff" font-weight="600">Inicio</text>
+    <text x="52" y="206" font-size="14" fill="#B8C7D9">Agenda</text>
+    <text x="52" y="248" font-size="14" fill="#B8C7D9">Pacientes</text>
+    <text x="52" y="290" font-size="14" fill="#B8C7D9">Consultas</text>
+    <text x="52" y="332" font-size="14" fill="#B8C7D9">Recetas</text>
+    <text x="52" y="374" font-size="14" fill="#B8C7D9">Facturación</text>
+    <text x="52" y="416" font-size="14" fill="#B8C7D9">Configuración</text>
+
+    <!-- Main header -->
+    <text x="240" y="100" font-size="24" font-weight="700" fill="#06284B">Citas de hoy</text>
+    <text x="240" y="124" font-size="14" fill="#64748B">Lunes 14 de septiembre</text>
+    <rect x="712" y="82" width="200" height="38" rx="19" fill="#F1F5F9"/>
+    <rect x="716" y="86" width="96" height="30" rx="15" fill="#fff"/>
+    <text x="764" y="106" font-size="13" font-weight="600" fill="#0072E8" text-anchor="middle">Listado</text>
+    <text x="862" y="106" font-size="13" fill="#64748B" text-anchor="middle">Calendario</text>
+
+    <!-- Summary cards -->
+    <rect x="240" y="148" width="210" height="84" rx="14" fill="#EAF4FF"/>
+    <text x="260" y="180" font-size="13" fill="#3A5A7C">Citas del día</text>
+    <text x="260" y="214" font-size="28" font-weight="700" fill="#06284B">12</text>
+    <rect x="466" y="148" width="210" height="84" rx="14" fill="#E6F8F1"/>
+    <text x="486" y="180" font-size="13" fill="#2F6B55">Confirmadas</text>
+    <text x="486" y="214" font-size="28" font-weight="700" fill="#06284B">9</text>
+    <rect x="692" y="148" width="220" height="84" rx="14" fill="#F4EDFD"/>
+    <text x="712" y="180" font-size="13" fill="#6B3FA0">Cupos extra</text>
+    <text x="712" y="214" font-size="28" font-weight="700" fill="#06284B">2</text>
+
+    <!-- Appointment list -->
+    <rect x="240" y="252" width="672" height="340" rx="14" fill="#fff" stroke="#E6EBF1"/>
+    <text x="262" y="284" font-size="12" font-weight="600" fill="#94A3B8">HORA</text>
+    <text x="350" y="284" font-size="12" font-weight="600" fill="#94A3B8">PACIENTE</text>
+    <text x="580" y="284" font-size="12" font-weight="600" fill="#94A3B8">CONSULTA</text>
+    <text x="780" y="284" font-size="12" font-weight="600" fill="#94A3B8">ESTADO</text>
+    <line x1="240" y1="298" x2="912" y2="298" stroke="#E6EBF1"/>
+
+    <g font-size="14">
+      <text x="262" y="332" fill="#06284B" font-weight="600">09:00</text>
+      <circle cx="364" cy="327" r="14" fill="#D5EFFF"/><text x="364" y="332" font-size="11" fill="#0072E8" text-anchor="middle" font-weight="700">MG</text>
+      <text x="388" y="332" fill="#1E293B">María González</text>
+      <rect x="580" y="314" width="92" height="26" rx="13" fill="#FCE7F3"/><text x="626" y="332" font-size="12" fill="#BE185D" text-anchor="middle">Ginecología</text>
+      <rect x="780" y="314" width="98" height="26" rx="13" fill="#DCFCE7"/><text x="829" y="332" font-size="12" fill="#15803D" text-anchor="middle">Confirmada</text>
+      <line x1="256" y1="356" x2="896" y2="356" stroke="#F1F5F9"/>
+
+      <text x="262" y="390" fill="#06284B" font-weight="600">09:30</text>
+      <circle cx="364" cy="385" r="14" fill="#E6F8F1"/><text x="364" y="390" font-size="11" fill="#00B67A" text-anchor="middle" font-weight="700">JH</text>
+      <text x="388" y="390" fill="#1E293B">José Hernández</text>
+      <rect x="580" y="372" width="80" height="26" rx="13" fill="#E0F2FE"/><text x="620" y="390" font-size="12" fill="#0369A1" text-anchor="middle">Pediatría</text>
+      <rect x="780" y="372" width="98" height="26" rx="13" fill="#DCFCE7"/><text x="829" y="390" font-size="12" fill="#15803D" text-anchor="middle">Confirmada</text>
+      <line x1="256" y1="414" x2="896" y2="414" stroke="#F1F5F9"/>
+
+      <text x="262" y="448" fill="#06284B" font-weight="600">10:00</text>
+      <circle cx="364" cy="443" r="14" fill="#F4EDFD"/><text x="364" y="448" font-size="11" fill="#9333EA" text-anchor="middle" font-weight="700">AM</text>
+      <text x="388" y="448" fill="#1E293B">Ana Martínez</text>
+      <rect x="580" y="430" width="70" height="26" rx="13" fill="#F1F5F9"/><text x="615" y="448" font-size="12" fill="#475569" text-anchor="middle">General</text>
+      <rect x="780" y="430" width="92" height="26" rx="13" fill="#FEF3C7"/><text x="826" y="448" font-size="12" fill="#B45309" text-anchor="middle">Pendiente</text>
+      <line x1="256" y1="472" x2="896" y2="472" stroke="#F1F5F9"/>
+
+      <text x="262" y="506" fill="#06284B" font-weight="600">10:30</text>
+      <circle cx="364" cy="501" r="14" fill="#D5EFFF"/><text x="364" y="506" font-size="11" fill="#0072E8" text-anchor="middle" font-weight="700">LR</text>
+      <text x="388" y="506" fill="#1E293B">Luis Ramírez</text>
+      <rect x="580" y="488" width="112" height="26" rx="13" fill="#E6F8F1"/><text x="636" y="506" font-size="12" fill="#047857" text-anchor="middle">Estomatología</text>
+      <rect x="780" y="488" width="98" height="26" rx="13" fill="#DCFCE7"/><text x="829" y="506" font-size="12" fill="#15803D" text-anchor="middle">Confirmada</text>
+      <line x1="256" y1="530" x2="896" y2="530" stroke="#F1F5F9"/>
+
+      <text x="262" y="564" fill="#06284B" font-weight="600">11:00</text>
+      <circle cx="364" cy="559" r="14" fill="#FCE7F3"/><text x="364" y="564" font-size="11" fill="#BE185D" text-anchor="middle" font-weight="700">SL</text>
+      <text x="388" y="564" fill="#1E293B">Sofía López</text>
+      <rect x="580" y="546" width="80" height="26" rx="13" fill="#E0F2FE"/><text x="620" y="564" font-size="12" fill="#0369A1" text-anchor="middle">Pediatría</text>
+      <rect x="780" y="546" width="94" height="26" rx="13" fill="#EDE9FE"/><text x="827" y="564" font-size="12" fill="#6D28D9" text-anchor="middle">Cupo extra</text>
+    </g>
+  </g>
+</svg>

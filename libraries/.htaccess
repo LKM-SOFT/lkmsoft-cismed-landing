@@ -1,0 +1,2 @@
+# Third-party PHP libraries: only loaded by the application, never served directly.
+Require all denied
