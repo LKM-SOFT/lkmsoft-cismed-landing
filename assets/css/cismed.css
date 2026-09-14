@@ -25,6 +25,7 @@
     17. Legal pages
     18. Not found page
     19. WhatsApp
+    20. Cookie consent
 */
 
 /**=====================
@@ -1178,4 +1179,120 @@ button.btn-main:disabled {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+/**=====================
+  20. Cookie consent
+==========================**/
+.cookie-banner {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: min(760px, calc(100% - 32px));
+  padding: 16px 18px;
+  border: 1px solid rgba(var(--main-color), 0.12);
+  border-radius: 20px;
+  background-color: rgba(var(--white), 1);
+  box-shadow: 0 24px 60px -20px rgba(var(--secondary-color), 0.35);
+  transform: translateX(-50%);
+}
+
+.cookie-banner[hidden] {
+  display: none;
+}
+
+.cookie-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.cookie-banner-content p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(var(--content-color), 1);
+}
+
+.cookie-banner-content a {
+  font-weight: 500;
+  color: rgba(var(--main-text-color), 1);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cookie-banner-icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  color: rgba(var(--main-color), 1);
+  background-color: rgba(var(--main-color), 0.08);
+}
+
+.cookie-banner-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.cookie-banner-actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 10px;
+}
+
+.cookie-banner-actions button span {
+  padding: 9px 20px;
+  font-size: 15px;
+}
+
+/* While the banner is visible, lift the WhatsApp button so they do not overlap. */
+body:has(.cookie-banner:not([hidden])) .whatsapp-float {
+  bottom: 150px;
+}
+
+@media (max-width: 767px) {
+  .cookie-banner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    bottom: 12px;
+  }
+
+  .cookie-banner-icon {
+    display: none;
+  }
+
+  .cookie-banner-actions button {
+    flex: 1;
+  }
+
+  .cookie-banner-actions button span {
+    width: 100%;
+  }
+
+  body:has(.cookie-banner:not([hidden])) .whatsapp-float {
+    bottom: 220px;
+  }
+}
+
+/* "Preferencias de cookies" looks like the other footer links. */
+footer .footer-link-button {
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: clamp(14px, 1vw, 16px);
+  color: rgba(var(--white), 1);
+  cursor: pointer;
+  transition: letter-spacing 0.5s ease;
+}
+
+footer .footer-link-button:hover {
+  letter-spacing: 0.05em;
 }

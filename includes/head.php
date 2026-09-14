@@ -19,6 +19,32 @@ $isIndexable = empty($page['robots']) || !str_contains($page['robots'], 'noindex
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <?php if (analytics_enabled()): ?>
+        <!-- Google tag (gtag.js) with Consent Mode v2: nothing is stored until the visitor accepts cookies. -->
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+
+            gtag('consent', 'default', {
+                analytics_storage: 'denied',
+                ad_storage: 'denied',
+                ad_user_data: 'denied',
+                ad_personalization: 'denied',
+                wait_for_update: 500
+            });
+
+            try {
+                if (localStorage.getItem('<?= COOKIE_CONSENT_KEY ?>') === 'granted') {
+                    gtag('consent', 'update', { analytics_storage: 'granted' });
+                }
+            } catch (error) {}
+
+            gtag('js', new Date());
+            gtag('config', '<?= e(GA_MEASUREMENT_ID) ?>');
+        </script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=<?= e(GA_MEASUREMENT_ID) ?>"></script>
+    <?php endif; ?>
     <title><?= e($pageTitle) ?></title>
     <meta name="description" content="<?= e($pageDescription) ?>">
     <meta name="author" content="<?= e(COMPANY_NAME) ?>">

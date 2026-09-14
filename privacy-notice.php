@@ -117,11 +117,19 @@ require __DIR__ . '/includes/page-header.php';
                                         No se usa para identificarte ni para fines publicitarios, y se elimina al cerrar tu navegador.
                                     </li>
                                     <li>
+                                        Cookies de análisis de Google Analytics, un servicio de Google que nos permite conocer de forma agregada cómo se usa
+                                        el sitio: páginas visitadas, tiempo de navegación, tipo de dispositivo y ubicación aproximada. Estas cookies
+                                        <strong>solo se activan si las aceptas</strong> en el aviso de cookies; si las rechazas, no se guardan en tu
+                                        navegador. Puedes cambiar tu elección en cualquier momento desde "Preferencias de cookies", en el pie de página.
+                                        La información que recopila Google se trata conforme a su
+                                        <a href="https://policies.google.com/privacy?hl=es-419" target="_blank" rel="noopener">política de privacidad</a>.
+                                    </li>
+                                    <li>
                                         Tipografías de Google Fonts, que se cargan desde servidores de Google. Al visitar el sitio, tu navegador se conecta
                                         con esos servidores, que reciben datos técnicos como tu dirección IP.
                                     </li>
                                 </ol>
-                                <p>Actualmente este sitio no utiliza cookies de análisis ni de publicidad.</p>
+                                <p>Tu elección sobre las cookies de análisis se guarda en el almacenamiento local de tu navegador. Este sitio no utiliza cookies de publicidad.</p>
                             </article>
 
                             <article id="changes">

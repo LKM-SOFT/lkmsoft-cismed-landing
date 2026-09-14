@@ -68,7 +68,7 @@ require __DIR__ . '/includes/page-header.php';
                                 <div>
                                     <h2>WhatsApp</h2>
                                     <ul>
-                                        <li><a <?= whatsapp_link_attributes() ?>><?= e(WHATSAPP_DISPLAY) ?></a></li>
+                                        <li><a <?= whatsapp_link_attributes('contact_page') ?>><?= e(WHATSAPP_DISPLAY) ?></a></li>
                                     </ul>
                                 </div>
                             </div>

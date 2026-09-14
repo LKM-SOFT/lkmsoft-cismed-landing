@@ -15,7 +15,7 @@
                                 <p data-aos="fade-up" data-aos-duration="1000">Déjanos tus datos y te contactamos para platicarte cómo CISMed puede ayudarte en tu práctica diaria.</p>
                                 <div class="btn-sec" data-aos="fade-up" data-aos-duration="1000">
                                     <a href="<?= url('contact') ?>" class="btn-main"><span>Solicitar información</span></a>
-                                    <a <?= whatsapp_link_attributes() ?> class="btn-outline btn-whatsapp"><span><?= whatsapp_icon() ?>Escríbenos por WhatsApp</span></a>
+                                    <a <?= whatsapp_link_attributes('call_to_action') ?> class="btn-outline btn-whatsapp"><span><?= whatsapp_icon() ?>Escríbenos por WhatsApp</span></a>
                                 </div>
                             </div>
                         </div>
@@ -24,7 +24,7 @@
                                 <span class="contact-box-icon"><i data-lucide="mail"></i></span>
                                 <h3>Escríbenos</h3>
                                 <a href="mailto:<?= e(CONTACT_EMAIL) ?>"><?= e(CONTACT_EMAIL) ?></a>
-                                <a <?= whatsapp_link_attributes() ?> class="contact-box-whatsapp"><?= whatsapp_icon() ?><?= e(WHATSAPP_DISPLAY) ?></a>
+                                <a <?= whatsapp_link_attributes('call_to_action_box') ?> class="contact-box-whatsapp"><?= whatsapp_icon() ?><?= e(WHATSAPP_DISPLAY) ?></a>
                             </div>
                         </div>
                     </div>

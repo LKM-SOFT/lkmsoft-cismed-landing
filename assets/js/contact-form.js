@@ -127,6 +127,9 @@
       const result = await response.json();
 
       if (result.ok) {
+        // Conversion for Google Analytics (defined in analytics.js on production only). No personal data is sent.
+        window.trackEvent?.("generate_lead", { form_name: "contact" });
+
         successMessage.textContent = result.message;
         form.classList.add("d-none");
         successBox.classList.remove("d-none");

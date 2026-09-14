@@ -17,6 +17,13 @@ const WHATSAPP_MESSAGE = 'Hola CISMED 👋 ¡Me gustaría recibir informes!';
 // Canonical production URL (without www), used for canonical, Open Graph and structured data.
 const SITE_URL = 'https://cismed.mx';
 
+// Google Analytics 4. The tag only loads on these hosts, so local development never sends visits.
+const GA_MEASUREMENT_ID = 'G-YZ7V24DNB5';
+const ANALYTICS_HOSTS = ['cismed.mx', 'www.cismed.mx'];
+
+/** localStorage key that remembers the visitor's cookie choice ("granted" or "denied"). */
+const COOKIE_CONSENT_KEY = 'cismed_cookie_consent';
+
 /**
  * Base path of the site, so links work both at the domain root and inside a local subfolder.
  * It is derived from the project folder, so scripts in subfolders (e.g. actions/) get the same value.
@@ -56,6 +63,16 @@ function asset(string $path): string
     $file = __DIR__ . '/../assets/' . ltrim($path, '/');
     $version = is_file($file) ? '?v=' . filemtime($file) : '';
     return url('assets/' . ltrim($path, '/')) . $version;
+}
+
+/**
+ * Whether Google Analytics should load for the current request (production hosts only).
+ */
+function analytics_enabled(): bool
+{
+    $host = strtolower((string) ($_SERVER['HTTP_HOST'] ?? ''));
+
+    return GA_MEASUREMENT_ID !== '' && in_array($host, ANALYTICS_HOSTS, true);
 }
 
 /**

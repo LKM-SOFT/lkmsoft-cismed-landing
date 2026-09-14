@@ -82,7 +82,7 @@ require __DIR__ . '/includes/page-header.php';
                                 <p>Déjanos tus datos y te contactamos, o escríbenos a <a href="mailto:<?= e(CONTACT_EMAIL) ?>"><?= e(CONTACT_EMAIL) ?></a>.</p>
                                 <div class="faq-help-actions">
                                     <a href="<?= url('contact') ?>" class="btn-main"><span>Solicitar información</span></a>
-                                    <a <?= whatsapp_link_attributes() ?> class="btn-outline btn-whatsapp"><span><?= whatsapp_icon() ?>WhatsApp</span></a>
+                                    <a <?= whatsapp_link_attributes('faq') ?> class="btn-outline btn-whatsapp"><span><?= whatsapp_icon() ?>WhatsApp</span></a>
                                 </div>
                             </div>
                         </aside>

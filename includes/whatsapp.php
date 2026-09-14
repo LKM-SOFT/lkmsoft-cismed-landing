@@ -17,13 +17,14 @@ function whatsapp_url(): string
 }
 
 /**
- * Data attributes used by main.js to build the device-specific URL.
+ * Link attributes: main.js builds the device-specific URL, analytics.js reports the click with its location.
  */
-function whatsapp_link_attributes(): string
+function whatsapp_link_attributes(string $location): string
 {
     return 'href="' . e(whatsapp_url()) . '" target="_blank" rel="noopener" data-whatsapp-link'
         . ' data-whatsapp-phone="' . e(WHATSAPP_NUMBER) . '"'
-        . ' data-whatsapp-text="' . e(WHATSAPP_MESSAGE) . '"';
+        . ' data-whatsapp-text="' . e(WHATSAPP_MESSAGE) . '"'
+        . ' data-track-location="' . e($location) . '"';
 }
 
 /**
