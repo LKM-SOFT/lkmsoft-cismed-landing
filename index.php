@@ -4,7 +4,7 @@ require_once __DIR__ . '/includes/config.php';
 $page = [
     'slug'        => '',
     'title'       => '',
-    'description' => 'CISMed es un expediente clínico electrónico con agenda médica, historia clínica, recetas y facturación CFDI, en la nube y pensado para médicos y clínicas en México.',
+    'description' => 'CISMed es un expediente clínico electrónico con agenda médica, historia clínica, recetas y facturación CFDI, en la nube y pensado para médicos y clínicas en México',
     'schema'      => [
         [
             '@context' => 'https://schema.org',
@@ -18,7 +18,7 @@ $page = [
             '@context'            => 'https://schema.org',
             '@type'               => 'SoftwareApplication',
             'name'                => SITE_NAME,
-            'description'         => 'Expediente clínico electrónico con gestión integral del consultorio, en la nube y pensado para médicos y clínicas en México.',
+            'description'         => 'Expediente clínico electrónico con gestión integral del consultorio, en la nube y pensado para médicos y clínicas en México',
             'applicationCategory' => 'HealthApplication',
             'operatingSystem'     => 'Web',
             'url'                 => SITE_URL . '/',
@@ -29,18 +29,18 @@ $page = [
 ];
 
 $highlights = [
-    ['icon' => 'receipt',      'title' => 'Facturación CFDI integrada', 'text' => 'Factura tus consultas sin otro sistema.'],
-    ['icon' => 'id-card',      'title' => 'Validación de CURP',         'text' => 'Registros de pacientes más confiables.'],
-    ['icon' => 'syringe',      'title' => 'Cartilla de vacunación',     'text' => 'Basada en las cartillas oficiales vigentes.'],
-    ['icon' => 'shield-check', 'title' => 'Datos protegidos',           'text' => 'Cifrado de datos sensibles conforme a la LFPDPPP.'],
+    ['icon' => 'receipt',      'title' => 'Facturación CFDI integrada', 'text' => 'Factura tus consultas sin otro sistema'],
+    ['icon' => 'id-card',      'title' => 'Validación de CURP',         'text' => 'Registros de pacientes más confiables'],
+    ['icon' => 'syringe',      'title' => 'Cartilla de vacunación',     'text' => 'Basada en las cartillas oficiales vigentes'],
+    ['icon' => 'shield-check', 'title' => 'Datos protegidos',           'text' => 'Cifrado de datos sensibles conforme a la LFPDPPP'],
 ];
 
 $agendaPoints = [
-    'Vista clásica o de calendario por día y por semana, según prefiera cada usuario.',
-    'Agenda con un clic en un espacio libre y reprograma arrastrando la cita.',
-    'Duración de cita, límite de pacientes por día y cupos extra.',
-    'Confirma, reprograma, cancela o cambia la cita a otro médico.',
-    'Registra tus días no laborables.',
+    'Vista clásica o de calendario por día y por semana, según prefiera cada usuario',
+    'Agenda con un clic en un espacio libre y reprograma arrastrando la cita',
+    'Duración de cita, límite de pacientes por día y cupos extra',
+    'Confirma, reprograma, cancela o cambia la cita a otro médico',
+    'Registra tus días no laborables',
 ];
 
 require __DIR__ . '/includes/head.php';
@@ -55,7 +55,7 @@ require __DIR__ . '/includes/header.php';
                         <div class="home-content">
                             <span class="subtitle" data-aos="fade-up" data-aos-duration="1000"><i data-lucide="cloud"></i>Expediente clínico electrónico en la nube</span>
                             <h1>Tu consultorio, <span>en orden y en la nube</span></h1>
-                            <p data-aos="fade-up" data-aos-duration="1000">Agenda médica, historia clínica, recetas y facturación CFDI en un solo sistema, pensado para médicos y clínicas en México.</p>
+                            <p data-aos="fade-up" data-aos-duration="1000">Agenda médica, historia clínica, recetas y facturación CFDI en un solo sistema, pensado para médicos y clínicas en México</p>
                             <div class="btn-panel" data-aos="fade-up" data-aos-duration="1000">
                                 <a href="<?= url('contact') ?>" class="btn-main"><span>Solicitar información</span></a>
                                 <a href="<?= url('features') ?>" class="btn-outline"><span>Ver funciones</span></a>
@@ -110,7 +110,7 @@ require __DIR__ . '/includes/header.php';
                 <div class="theme-title">
                     <span class="subtitle" data-aos="fade-up" data-aos-duration="1000"><i data-lucide="layout-dashboard"></i>Todo en un solo sistema</span>
                     <h2>Lo que CISMed hace <span>por tu consultorio</span></h2>
-                    <p data-aos="fade-up" data-aos-duration="1000">Desde la cita hasta la factura: cada módulo trabaja con los demás para que no captures lo mismo dos veces.</p>
+                    <p data-aos="fade-up" data-aos-duration="1000">Desde la cita hasta la factura: cada módulo trabaja con los demás para que no captures lo mismo dos veces</p>
                 </div>
                 <div class="row g-4">
                     <?php foreach (MODULES as $module): ?>
@@ -137,7 +137,7 @@ require __DIR__ . '/includes/header.php';
                         <div class="theme-title text-start">
                             <span class="subtitle" data-aos="fade-up" data-aos-duration="1000"><i data-lucide="calendar-days"></i>Agenda médica</span>
                             <h2>Una agenda que <span>se adapta a tu forma de trabajar</span></h2>
-                            <p data-aos="fade-up" data-aos-duration="1000">Configura tu horario por especialidad, con horario fijo o distinto por día, y organiza tus citas como te resulte más cómodo.</p>
+                            <p data-aos="fade-up" data-aos-duration="1000">Configura tu horario por especialidad, con horario fijo o distinto por día, y organiza tus citas como te resulte más cómodo</p>
                         </div>
                         <ul class="check-list" data-aos="fade-up" data-aos-duration="800">
                             <?php foreach ($agendaPoints as $point): ?>
@@ -187,7 +187,7 @@ require __DIR__ . '/includes/header.php';
                         <div class="theme-title text-start">
                             <span class="subtitle" data-aos="fade-up" data-aos-duration="1000"><i data-lucide="circle-help"></i>Preguntas frecuentes</span>
                             <h2>Resolvemos <span>tus dudas</span></h2>
-                            <p data-aos="fade-up" data-aos-duration="1000">Si no encuentras lo que buscas, escríbenos y con gusto te ayudamos.</p>
+                            <p data-aos="fade-up" data-aos-duration="1000">Si no encuentras lo que buscas, escríbenos y con gusto te ayudamos</p>
                         </div>
                         <a href="<?= url('faq') ?>" class="btn-outline" data-aos="fade-up" data-aos-duration="1000"><span>Ver todas las preguntas</span></a>
                     </div>

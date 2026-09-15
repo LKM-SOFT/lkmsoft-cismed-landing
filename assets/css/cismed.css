@@ -549,9 +549,11 @@ header .menu-btn {
   color: rgba(var(--main-color), 1);
 }
 
+/* Email and WhatsApp each on their own line, centered. */
 .contact-box a {
+  display: block;
   font-weight: 500;
-  word-break: break-all;
+  overflow-wrap: anywhere;
   color: rgba(var(--main-text-color), 1);
 }
 
@@ -1151,11 +1153,11 @@ button.btn-main:disabled {
 }
 
 .contact-box .contact-box-whatsapp {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  margin-top: 10px;
-  word-break: normal;
+  margin-top: 12px;
 }
 
 .contact-box .contact-box-whatsapp .whatsapp-icon {
