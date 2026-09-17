@@ -1,8 +1,16 @@
 # Custom "page not found" page
 ErrorDocument 404 /404.php
 
-# Redirect www to the canonical domain without www (https://cismed.mx)
+# Force HTTPS (X-Forwarded-Proto covers hosting that terminates TLS on a proxy).
+# Local development over plain HTTP is left alone.
 RewriteEngine on
+RewriteCond %{HTTP_HOST} !^localhost [NC]
+RewriteCond %{HTTP_HOST} !^127\.0\.0\.1 [NC]
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^(.*)$ https://cismed.mx/$1 [R=301,L]
+
+# Redirect www to the canonical domain without www (https://cismed.mx)
 RewriteCond %{HTTP_HOST} ^www\.cismed\.mx$ [NC]
 RewriteRule ^(.*)$ https://cismed.mx/$1 [R=301,L]
 
