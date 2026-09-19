@@ -211,6 +211,16 @@ const SPECIALTIES = [
     ],
 ];
 
+/**
+ * Consultation sheets being built. The blurred suffix plus the loading placeholder in the card
+ * signal "work in progress" without promising a date.
+ */
+const UPCOMING_SPECIALTIES = [
+    ['icon' => 'heart-pulse', 'prefix' => 'Cardio', 'suffix' => 'logía', 'title' => 'Cardiología'],
+    ['icon' => 'droplets',    'prefix' => 'Nefro',  'suffix' => 'logía', 'title' => 'Nefrología'],
+    ['icon' => 'bone',        'prefix' => 'Ortop',  'suffix' => 'edia',  'title' => 'Ortopedia'],
+];
+
 const AUDIENCES = [
     ['icon' => 'user-round', 'title' => 'Médicos independientes',      'text' => 'Lleva tu agenda, expedientes, recetas y facturas desde un solo lugar'],
     ['icon' => 'building-2', 'title' => 'Clínicas con varios médicos', 'text' => 'Cuenta maestra para la clínica y agendas de varios médicos lado a lado'],

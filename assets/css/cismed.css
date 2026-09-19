@@ -512,6 +512,68 @@ header .menu-btn {
   height: 28px;
 }
 
+/* Specialties whose consultation sheet is still being built: blurred ending + loading placeholder. */
+.specialty-card-upcoming {
+  cursor: default;
+  border-style: dashed;
+  border-color: rgba(var(--main-color), 0.25);
+  background: linear-gradient(180deg, #fbfcfe 0%, rgba(var(--white), 1) 100%);
+}
+
+.specialty-card-upcoming:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.specialty-card-upcoming .specialty-icon {
+  color: rgba(var(--white), 0.85);
+  background-color: rgba(var(--secondary-color), 0.35);
+}
+
+.specialty-card-upcoming h3 {
+  color: rgba(var(--secondary-color), 0.75);
+}
+
+.text-unfinished {
+  filter: blur(4px);
+  opacity: 0.75;
+}
+
+.skeleton-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skeleton-lines span {
+  height: 12px;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #e8edf3 25%, #f4f7fa 50%, #e8edf3 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.6s ease-in-out infinite;
+}
+
+.skeleton-lines span:nth-child(2) {
+  width: 85%;
+  animation-delay: 0.15s;
+}
+
+.skeleton-lines span:nth-child(3) {
+  width: 60%;
+  animation-delay: 0.3s;
+}
+
+@keyframes skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-lines span {
+    animation: none;
+  }
+}
+
 /**=====================
   10. Home - audiences
 ==========================**/

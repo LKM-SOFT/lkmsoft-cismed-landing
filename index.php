@@ -155,12 +155,12 @@ require __DIR__ . '/includes/header.php';
         <!-- agenda section end -->
 
         <!-- specialties section start -->
-        <section class="specialties-section section-t-space section-b-space">
+        <section class="specialties-section section-t-space section-b-space" id="specialties">
             <div class="container">
                 <div class="theme-title">
                     <span class="subtitle" data-aos="fade-up" data-aos-duration="1000"><i data-lucide="heart-pulse"></i>Consultas por especialidad</span>
                     <h2>Hojas de consulta <span>para tu especialidad</span></h2>
-                    <p data-aos="fade-up" data-aos-duration="1000">CISMed incluye 4 hojas de consulta especializadas, cada una con la información que realmente necesitas registrar. <?= e(CONSULTATION_SHEETS_NOTE) ?></p>
+                    <p data-aos="fade-up" data-aos-duration="1000">CISMed incluye 5 hojas de consulta especializadas, cada una con la información que realmente necesitas registrar. <?= e(CONSULTATION_SHEETS_NOTE) ?></p>
                 </div>
                 <div class="row g-4">
                     <?php foreach (SPECIALTIES as $specialty): ?>
@@ -170,6 +170,22 @@ require __DIR__ . '/includes/header.php';
                                 <h3><?= e($specialty['title']) ?></h3>
                                 <p><?= e($specialty['summary']) ?></p>
                             </a>
+                        </div>
+                    <?php endforeach; ?>
+
+                    <?php foreach (UPCOMING_SPECIALTIES as $upcoming): ?>
+                        <!-- Hidden on phones: stacked one per row they only make the section longer. -->
+                        <div class="col-lg-3 col-sm-6 d-none d-sm-block" data-aos="fade-up" data-aos-duration="500">
+                            <div class="specialty-card specialty-card-upcoming" aria-label="<?= e($upcoming['title']) ?>: hoja de consulta en desarrollo">
+                                <span class="specialty-icon"><i data-lucide="<?= e($upcoming['icon']) ?>"></i></span>
+                                <h3 aria-hidden="true"><?= e($upcoming['prefix']) ?><span class="text-unfinished"><?= e($upcoming['suffix']) ?></span></h3>
+                                <!-- Loading placeholder: the sheet for this specialty is still being built. -->
+                                <div class="skeleton-lines" aria-hidden="true">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
                         </div>
                     <?php endforeach; ?>
                 </div>
