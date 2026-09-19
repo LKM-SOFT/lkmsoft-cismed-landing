@@ -78,7 +78,7 @@ const MODULES = [
         'anchor'  => 'consultations',
         'icon'    => 'stethoscope',
         'title'   => 'Consultas',
-        'summary' => '4 hojas de consulta especializadas, historial, estadísticas y gráficas de crecimiento',
+        'summary' => '5 hojas de consulta especializadas, historial, estadísticas y gráficas de crecimiento',
         'heading' => 'Consultas con el formato de tu especialidad',
         'intro'   => 'Registra cada consulta con la hoja que tu especialidad necesita y revisa la evolución del paciente. ' . CONSULTATION_SHEETS_NOTE,
         'points'  => [
@@ -86,11 +86,12 @@ const MODULES = [
             'Hoja de consulta de ginecología, con control prenatal y diagnóstico de climaterio',
             'Hoja de consulta de pediatría',
             'Hoja de consulta de estomatología, con odontograma',
+            'Hoja de consulta de oftalmología, con examen optométrico, segmento anterior, fondo de ojo y graduación de lentes',
             'Historial de consultas del paciente',
             'Estadísticas de consultas',
             'Gráficas de crecimiento',
         ],
-        'tags'    => ['4 hojas de consulta', 'Odontograma', 'Gráficas de crecimiento'],
+        'tags'    => ['5 hojas de consulta', 'Odontograma', 'Gráficas de crecimiento'],
     ],
     [
         'anchor'  => 'prescriptions',
@@ -194,6 +195,20 @@ const SPECIALTIES = [
             'Historial de consultas',
         ],
     ],
+    [
+        'slug'    => 'ophthalmology',
+        'icon'    => 'eye',
+        'title'   => 'Oftalmología',
+        'summary' => 'Examen optométrico, segmento anterior, fondo de ojo y graduación de lentes',
+        'intro'   => 'Registra la exploración oftalmológica completa sin tener que escribirla en texto libre',
+        'points'  => [
+            'Hoja de consulta de oftalmología',
+            'Agudeza visual de lejos y de cerca, con cartillas para niños',
+            'Exploración de segmento anterior y fondo de ojo, con plantilla de hallazgos normales',
+            'Refracción, queratometrías y presión intraocular',
+            'Diagnósticos por ojo con catálogo CIE-10',
+        ],
+    ],
 ];
 
 const AUDIENCES = [
@@ -237,7 +252,7 @@ const FAQ_GROUPS = [
         'title' => 'Expediente y consultas',
         'items' => [
             ['q' => '¿Qué incluye la historia clínica?', 'a' => 'Hoja frontal; antecedentes heredofamiliares, patológicos, no patológicos, familiares y sociales; antecedentes ginecológicos y gineco-obstétricos; desarrollo motor; contactos del paciente y cartilla de vacunación basada en las cartillas oficiales vigentes'],
-            ['q' => '¿Qué especialidades tienen hoja de consulta?', 'a' => 'CISMed incluye 4 hojas de consulta: medicina general; ginecología, con control prenatal y diagnóstico de climaterio; pediatría, y estomatología, con odontograma. También hay historial de consultas, estadísticas y gráficas de crecimiento. ' . CONSULTATION_SHEETS_NOTE],
+            ['q' => '¿Qué especialidades tienen hoja de consulta?', 'a' => 'CISMed incluye 5 hojas de consulta: medicina general; ginecología, con control prenatal y diagnóstico de climaterio; pediatría, estomatología, con odontograma, y oftalmología, con examen optométrico, segmento anterior, fondo de ojo y graduación de lentes. También hay historial de consultas, estadísticas y gráficas de crecimiento. ' . CONSULTATION_SHEETS_NOTE],
             ['q' => '¿Puedo usar mi propio formato de receta?', 'a' => 'Sí. Cada médico configura el formato de receta que usa en su práctica'],
         ],
     ],
