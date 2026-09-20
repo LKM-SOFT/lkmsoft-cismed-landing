@@ -28,7 +28,8 @@ $currentSlug = $page['slug'] ?? '';
             </ul>
         </nav>
         <div class="right-btns">
-            <a href="<?= url('contact') ?>" class="btn-main"><span><span class="d-none d-sm-inline">Solicitar información</span><span class="d-sm-none">Contacto</span></span></a>
+            <a href="<?= url('contact') ?>" class="btn-outline d-none d-md-inline-block"><span>Solicitar información</span></a>
+            <a <?= account_link_attributes('header') ?> class="btn-main"><span>Crear cuenta</span></a>
         </div>
     </header>
     <!-- header end -->

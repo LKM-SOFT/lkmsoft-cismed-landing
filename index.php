@@ -57,8 +57,8 @@ require __DIR__ . '/includes/header.php';
                             <h1>Tu consultorio, <span>en orden y en la nube</span></h1>
                             <p data-aos="fade-up" data-aos-duration="1000">Agenda médica, historia clínica, recetas y facturación CFDI en un solo sistema, pensado para médicos y clínicas en México</p>
                             <div class="btn-panel" data-aos="fade-up" data-aos-duration="1000">
-                                <a href="<?= url('contact') ?>" class="btn-main"><span>Solicitar información</span></a>
-                                <a href="<?= url('features') ?>" class="btn-outline"><span>Ver funciones</span></a>
+                                <a <?= account_link_attributes('hero') ?> class="btn-main"><span>Crear cuenta</span></a>
+                                <a href="<?= url('contact') ?>" class="btn-outline"><span>Solicitar información</span></a>
                             </div>
                         </div>
                     </div>
@@ -192,6 +192,38 @@ require __DIR__ . '/includes/header.php';
             </div>
         </section>
         <!-- specialties section end -->
+
+        <!-- plans summary section start -->
+        <section class="plans-summary section-t-space section-b-space" id="plans">
+            <div class="container">
+                <div class="theme-title">
+                    <span class="subtitle" data-aos="fade-up" data-aos-duration="1000"><i data-lucide="badge-dollar-sign"></i>Planes disponibles</span>
+                    <h2>Un plan para cada <span>tamaño de consultorio</span></h2>
+                    <p data-aos="fade-up" data-aos-duration="1000">
+                        Tenemos <?= count(PLANS) ?> planes, desde $<?= number_format(PLANS[0]['price']) ?> MXN al mes con IVA incluido, para consultorios de
+                        <?= e((string) PLANS[0]['doctors']) ?> hasta <?= e((string) PLANS[count(PLANS) - 1]['doctors']) ?> médicos.
+                        Puedes pagarlos en modalidad mensual, trimestral, semestral o anual, con distintos descuentos según la que elijas
+                    </p>
+                </div>
+
+                <ul class="plans-strip" data-aos="fade-up" data-aos-duration="800">
+                    <?php foreach (PLANS as $plan): ?>
+                        <li>
+                            <h3><?= e($plan['name']) ?></h3>
+                            <p class="plan-price">$<?= number_format($plan['price']) ?></p>
+                            <p class="plan-price-note">MXN al mes</p>
+                            <p class="plan-doctors"><?= (int) $plan['doctors'] === 1 ? '1 médico' : e((string) $plan['doctors']) . ' médicos' ?></p>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+
+                <div class="plans-summary-actions" data-aos="fade-up" data-aos-duration="600">
+                    <a href="<?= url('plans') ?>" class="btn-main"><span>Ver qué incluye cada plan</span></a>
+                    <p>¿Necesitas algo diferente? <a href="<?= url('contact') ?>">Escríbenos</a> y lo revisamos contigo.</p>
+                </div>
+            </div>
+        </section>
+        <!-- plans summary section end -->
 
 <?php require __DIR__ . '/includes/audiences.php'; ?>
 

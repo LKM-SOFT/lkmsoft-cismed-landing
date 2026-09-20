@@ -7,12 +7,23 @@
 const MAIN_NAV = [
     'features'    => 'Funciones',
     'specialties' => 'Especialidades',
+    'plans'       => 'Planes',
     'faq'         => 'Preguntas frecuentes',
 ];
 
 const LEGAL_NAV = [
     'privacy-notice' => 'Aviso de privacidad',
 ];
+
+/**
+ * Link attributes for the "create account" button: sign-up lives in the CIS application,
+ * so it opens in a new tab. analytics.js reports the click with the given location.
+ */
+function account_link_attributes(string $location): string
+{
+    return 'href="' . e(registration_url()) . '" target="_blank" rel="noopener"'
+        . ' data-account-link data-track-location="' . e($location) . '"';
+}
 
 /**
  * Renders the CISMed logo (symbol + wordmark).

@@ -84,6 +84,11 @@
       return;
     }
 
+    if (link.hasAttribute("data-account-link")) {
+      window.trackEvent("create_account_click", { link_location: link.dataset.trackLocation || "unknown" });
+      return;
+    }
+
     if (link.protocol === "mailto:") {
       // The <body> class is "page-<slug>" (see includes/head.php): report the page when it is not the footer.
       const pageName = document.body.className.replace(/^page-/, "");

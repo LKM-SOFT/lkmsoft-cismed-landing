@@ -221,6 +221,35 @@ const UPCOMING_SPECIALTIES = [
     ['icon' => 'bone',        'prefix' => 'Ortop',  'suffix' => 'edia',  'title' => 'Ortopedia'],
 ];
 
+/** Features listed in every plan card, in the same order as in the application. */
+const PLAN_FEATURES = [
+    'Agenda médica',
+    'Consulta externa y hojas de consulta especializadas',
+    'Receta electrónica',
+    'Almacenamiento ilimitado en la nube',
+    'Estadísticas y reportes',
+    'Notificaciones y recordatorios vía correo electrónico',
+    'Notificaciones y recordatorios vía SMS',
+    'Notificaciones y recordatorios vía WhatsApp',
+    'Facturación electrónica',
+];
+
+/**
+ * Licence plans. 'included' holds the number of features from PLAN_FEATURES that the plan covers;
+ * the rest are shown as not included.
+ */
+const PLANS = [
+    ['name' => 'Classic',  'price' => 400,  'doctors' => 1,  'assistants' => '1',         'included' => 7],
+    ['name' => 'Master',   'price' => 600,  'doctors' => 2,  'assistants' => '2',         'included' => 8],
+    ['name' => 'Premium',  'price' => 900,  'doctors' => 3,  'assistants' => 'Ilimitado', 'included' => 9],
+    ['name' => 'Gold',     'price' => 1250, 'doctors' => 5,  'assistants' => 'Ilimitado', 'included' => 9],
+    ['name' => 'Platinum', 'price' => 1750, 'doctors' => 7,  'assistants' => 'Ilimitado', 'included' => 9],
+    ['name' => 'Black',    'price' => 2500, 'doctors' => 10, 'assistants' => 'Ilimitado', 'included' => 9],
+];
+
+/** Billing cycles available for every plan. */
+const BILLING_CYCLES = ['Mensual', 'Trimestral', 'Semestral', 'Anual'];
+
 const AUDIENCES = [
     ['icon' => 'user-round', 'title' => 'Médicos independientes',      'text' => 'Lleva tu agenda, expedientes, recetas y facturas desde un solo lugar'],
     ['icon' => 'building-2', 'title' => 'Clínicas con varios médicos', 'text' => 'Cuenta maestra para la clínica y agendas de varios médicos lado a lado'],

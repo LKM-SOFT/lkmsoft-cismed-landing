@@ -26,6 +26,7 @@
     18. Not found page
     19. WhatsApp
     20. Cookie consent
+    21. Plans
 */
 
 /**=====================
@@ -1359,4 +1360,278 @@ footer .footer-link-button {
 
 footer .footer-link-button:hover {
   letter-spacing: 0.05em;
+}
+
+/**=====================
+  21. Plans
+==========================**/
+/* Home summary */
+.plans-summary {
+  background-color: rgba(var(--white), 1);
+}
+
+.plans-strip {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+
+.plans-strip li {
+  padding: clamp(18px, 1.8vw, 26px) 14px;
+  border: 1px solid #e6f1fd;
+  border-radius: clamp(14px, 1.6vw, 20px);
+  text-align: center;
+  background: linear-gradient(180deg, #f5faff 0%, rgba(var(--white), 1) 100%);
+}
+
+.plans-strip h3 {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(16px, 1.3vw, 19px);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: rgba(var(--main-text-color), 1);
+}
+
+.plan-price {
+  margin: 10px 0 0;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(24px, 2.4vw, 34px);
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(var(--secondary-color), 1);
+}
+
+.plan-price span {
+  font-size: 0.55em;
+  font-weight: 600;
+}
+
+.plan-price-note {
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: rgba(var(--content-color), 0.85);
+}
+
+.plans-strip .plan-doctors {
+  margin: 12px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid #e6f1fd;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(var(--secondary-color), 1);
+}
+
+.plans-summary-actions {
+  margin-top: clamp(28px, 3vw, 40px);
+  text-align: center;
+}
+
+.plans-summary-actions p {
+  margin-top: 16px;
+  color: rgba(var(--content-color), 1);
+}
+
+.plans-summary-actions p a {
+  font-weight: 600;
+  color: rgba(var(--main-text-color), 1);
+}
+
+@media (max-width: 1199px) {
+  .plans-strip { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 575px) {
+  .plans-strip { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+}
+
+/* Plans page */
+.billing-cycles {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: clamp(32px, 3vw, 44px);
+  padding: clamp(20px, 2vw, 26px) clamp(20px, 2.4vw, 32px);
+  border: 1px solid #e6f1fd;
+  border-radius: clamp(16px, 2vw, 22px);
+  background: linear-gradient(160deg, #f2f8ff 0%, #e6f1fd 100%);
+}
+
+.billing-cycles h2 {
+  margin-bottom: 6px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(20px, 1.9vw, 24px);
+  font-weight: 600;
+  color: rgba(var(--secondary-color), 1);
+}
+
+.billing-cycles p {
+  margin: 0;
+  color: rgba(var(--content-color), 1);
+}
+
+.billing-cycles strong {
+  color: rgba(var(--secondary-color), 1);
+}
+
+.billing-cycles-icon,
+.plans-custom-icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  color: rgba(var(--white), 1);
+  background: linear-gradient(135deg, rgba(var(--main-color), 1), rgba(var(--accent-color), 1));
+}
+
+.billing-cycles-icon svg,
+.plans-custom-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.plan-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: clamp(24px, 2.4vw, 34px);
+  border: 1px solid #e6f1fd;
+  border-radius: clamp(18px, 2vw, 24px);
+  background-color: rgba(var(--white), 1);
+  box-shadow: 0 30px 60px -30px rgba(var(--main-color), 0.18);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.plan-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px -24px rgba(var(--main-color), 0.3);
+}
+
+.plan-card h3 {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(18px, 1.6vw, 21px);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(var(--main-text-color), 1);
+}
+
+.plan-card .plan-price {
+  margin-top: 12px;
+}
+
+.plan-limits {
+  margin: 20px 0;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background-color: rgba(var(--main-color), 0.05);
+}
+
+.plan-limits li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+  color: rgba(var(--content-color), 1);
+}
+
+.plan-limits li + li {
+  margin-top: 8px;
+}
+
+.plan-limits svg {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  color: rgba(var(--main-color), 1);
+}
+
+.plan-limits strong {
+  color: rgba(var(--secondary-color), 1);
+}
+
+.plan-features {
+  flex-grow: 1;
+  margin-bottom: 24px;
+}
+
+.plan-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+  line-height: 1.4;
+  color: rgba(var(--content-color), 1);
+}
+
+.plan-features li + li {
+  margin-top: 12px;
+}
+
+.plan-features svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+}
+
+.plan-features .is-included svg {
+  color: rgba(var(--accent-color), 1);
+}
+
+.plan-features .is-excluded {
+  color: rgba(var(--content-color), 0.6);
+}
+
+.plan-features .is-excluded svg {
+  color: #d05a5a;
+}
+
+.plan-card .btn-main span {
+  width: 100%;
+}
+
+.plans-custom {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: clamp(32px, 3vw, 44px);
+  padding: clamp(22px, 2.2vw, 30px) clamp(22px, 2.6vw, 34px);
+  border: 1px dashed rgba(var(--main-color), 0.35);
+  border-radius: clamp(16px, 2vw, 22px);
+  background-color: rgba(var(--white), 1);
+}
+
+.plans-custom h2 {
+  margin-bottom: 6px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(20px, 1.9vw, 24px);
+  font-weight: 600;
+  color: rgba(var(--secondary-color), 1);
+}
+
+.plans-custom p {
+  margin: 0;
+  color: rgba(var(--content-color), 1);
+}
+
+.plans-custom .btn-outline {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+@media (max-width: 767px) {
+  .billing-cycles,
+  .plans-custom {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .plans-custom .btn-outline {
+    margin-left: 0;
+  }
 }

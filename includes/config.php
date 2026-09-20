@@ -21,6 +21,29 @@ const SITE_URL = 'https://cismed.mx';
 const GA_MEASUREMENT_ID = 'G-YZ7V24DNB5';
 const ANALYTICS_HOSTS = ['cismed.mx', 'www.cismed.mx'];
 
+// CIS application (sign-up lives there, not in the landing).
+const APP_URL_PRODUCTION = 'https://app.cismed.mx';
+const APP_URL_LOCAL = 'http://localhost:8090';
+
+/**
+ * Absolute URL inside the CIS application, pointing to production or to the local instance.
+ */
+function app_url(string $path = ''): string
+{
+    $host = strtolower((string) ($_SERVER['HTTP_HOST'] ?? ''));
+    $base = in_array($host, ANALYTICS_HOSTS, true) ? APP_URL_PRODUCTION : APP_URL_LOCAL;
+
+    return $base . '/' . ltrim($path, '/');
+}
+
+/**
+ * Sign-up page for doctors.
+ */
+function registration_url(): string
+{
+    return app_url('registration/doctor');
+}
+
 /** localStorage key that remembers the visitor's cookie choice ("granted" or "denied"). */
 const COOKIE_CONSENT_KEY = 'cismed_cookie_consent';
 
