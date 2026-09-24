@@ -12,7 +12,7 @@ const MODULES = [
         'anchor'  => 'scheduling',
         'icon'    => 'calendar-days',
         'title'   => 'Agenda médica',
-        'summary' => 'Horarios por especialidad, cupos extra y vista de calendario con arrastrar y soltar',
+        'summary' => 'Horarios por especialidad, cupos extra y calendario con sincronización con Google Calendar',
         'heading' => 'Una agenda que se adapta a tu forma de trabajar',
         'intro'   => 'Organiza la agenda de uno o varios médicos con horarios por especialidad y la vista que cada usuario prefiera',
         'points'  => [
@@ -20,12 +20,13 @@ const MODULES = [
             'Duración de cita, límite de pacientes por día y cupos extra',
             'Registro de días no laborables',
             'Vista clásica o de calendario por día y por semana',
-            'Agenda con un clic en un espacio libre y reprograma arrastrando la cita',
+            'Agenda con un clic en un espacio libre del calendario',
             'Confirma, edita, reprograma, cancela o cambia la cita a otro médico',
             'Agendas de varios médicos lado a lado para el administrador',
             'Dashboard con las citas del día en listado o en calendario',
+            'Sincronización de tus citas con Google Calendar',
         ],
-        'image'   => ['src' => 'images/mockups/agenda-week.svg', 'width' => 760, 'height' => 560, 'alt' => 'Vista semanal de la agenda de CISMed con una cita siendo reprogramada'],
+        'image'   => ['src' => 'images/mockups/agenda-week.svg', 'width' => 760, 'height' => 560, 'alt' => 'Vista semanal de la agenda de CISMed'],
     ],
     [
         'anchor'  => 'notifications',
@@ -40,6 +41,7 @@ const MODULES = [
             'Envío por SMS',
             'Envío por WhatsApp',
             'Notificaciones internas para el equipo del consultorio',
+            'El envío por SMS y por WhatsApp está disponible según el plan contratado',
         ],
         'tags'    => ['Correo electrónico', 'SMS', 'WhatsApp', 'Avisos internos'],
     ],
@@ -224,6 +226,7 @@ const UPCOMING_SPECIALTIES = [
 /** Features listed in every plan card, in the same order as in the application. */
 const PLAN_FEATURES = [
     'Agenda médica',
+    'Integración con Google Calendar',
     'Consulta externa y hojas de consulta especializadas',
     'Receta electrónica',
     'Almacenamiento ilimitado en la nube',
@@ -240,11 +243,11 @@ const PLAN_FEATURES = [
  */
 const PLANS = [
     ['name' => 'Classic',  'price' => 400,  'doctors' => 1,  'assistants' => '1',         'included' => 7],
-    ['name' => 'Master',   'price' => 600,  'doctors' => 2,  'assistants' => '2',         'included' => 8],
-    ['name' => 'Premium',  'price' => 900,  'doctors' => 3,  'assistants' => 'Ilimitado', 'included' => 9],
-    ['name' => 'Gold',     'price' => 1250, 'doctors' => 5,  'assistants' => 'Ilimitado', 'included' => 9],
-    ['name' => 'Platinum', 'price' => 1750, 'doctors' => 7,  'assistants' => 'Ilimitado', 'included' => 9],
-    ['name' => 'Black',    'price' => 2500, 'doctors' => 10, 'assistants' => 'Ilimitado', 'included' => 9],
+    ['name' => 'Master',   'price' => 600,  'doctors' => 2,  'assistants' => '2',         'included' => 9],
+    ['name' => 'Premium',  'price' => 900,  'doctors' => 3,  'assistants' => 'Ilimitado', 'included' => 10],
+    ['name' => 'Gold',     'price' => 1250, 'doctors' => 5,  'assistants' => 'Ilimitado', 'included' => 10],
+    ['name' => 'Platinum', 'price' => 1750, 'doctors' => 7,  'assistants' => 'Ilimitado', 'included' => 10],
+    ['name' => 'Black',    'price' => 2500, 'doctors' => 10, 'assistants' => 'Ilimitado', 'included' => 10],
 ];
 
 /** Billing cycles available for every plan. */
@@ -279,8 +282,9 @@ const FAQ_GROUPS = [
         'title' => 'Agenda y pacientes',
         'items' => [
             ['q' => '¿Puedo configurar mi horario de consulta?', 'a' => 'Sí. Defines tu horario por especialidad, fijo o distinto para cada día, con la duración de las citas, un límite de pacientes por día, cupos extra y tus días no laborables'],
-            ['q' => '¿Cómo se ve la agenda?', 'a' => 'Cada usuario elige entre la vista clásica y la vista de calendario por día o por semana. En el calendario puedes agendar con un clic en un espacio libre y reprogramar arrastrando la cita'],
-            ['q' => '¿Se envían recordatorios de cita a los pacientes?', 'a' => 'Sí. CISMed envía recordatorios de cita por correo electrónico, SMS y WhatsApp, además de notificaciones internas para el equipo'],
+            ['q' => '¿Cómo se ve la agenda?', 'a' => 'Cada usuario elige entre la vista clásica y la vista de calendario por día o por semana. En el calendario puedes agendar con un clic en un espacio libre, y tus citas se sincronizan con Google Calendar'],
+            ['q' => '¿CISMed se integra con Google Calendar?', 'a' => 'Sí. Tus citas de CISMed se sincronizan con Google Calendar, así que las puedes consultar desde el calendario que ya usas en tu teléfono o computadora.'],
+            ['q' => '¿Se envían recordatorios de cita a los pacientes?', 'a' => 'Sí. CISMed envía recordatorios de cita por correo electrónico, SMS y WhatsApp, además de notificaciones internas para el equipo. El envío por SMS y por WhatsApp está disponible según el plan contratado'],
             ['q' => '¿Funciona para clínicas con varios médicos?', 'a' => 'Sí. La clínica tiene una cuenta maestra, el administrador puede ver las agendas de varios médicos lado a lado y una cita se puede reprogramar con otro médico'],
             ['q' => '¿Cómo se registran los pacientes?', 'a' => 'El registro ofrece sugerencias y autocompletado, y la CURP del paciente se valida mediante un servicio externo'],
         ],

@@ -37,10 +37,11 @@ $highlights = [
 
 $agendaPoints = [
     'Vista clásica o de calendario por día y por semana, según prefiera cada usuario',
-    'Agenda con un clic en un espacio libre y reprograma arrastrando la cita',
+    'Agenda con un clic en un espacio libre del calendario',
     'Duración de cita, límite de pacientes por día y cupos extra',
     'Confirma, reprograma, cancela o cambia la cita a otro médico',
     'Registra tus días no laborables',
+    'Sincroniza tus citas con Google Calendar',
 ];
 
 require __DIR__ . '/includes/head.php';
@@ -147,7 +148,7 @@ require __DIR__ . '/includes/header.php';
                         <a href="<?= url('features') ?>#scheduling" class="btn-outline mt-4" data-aos="fade-up" data-aos-duration="800"><span>Conocer la agenda</span></a>
                     </div>
                     <div class="col-lg-7">
-                        <img src="<?= asset('images/mockups/agenda-week.svg') ?>" class="img-fluid" width="760" height="560" alt="Vista semanal de la agenda de CISMed con una cita siendo reprogramada" loading="lazy" data-aos="fade-left" data-aos-duration="1000">
+                        <img src="<?= asset('images/mockups/agenda-week.svg') ?>" class="img-fluid" width="760" height="560" alt="Vista semanal de la agenda de CISMed" loading="lazy" data-aos="fade-left" data-aos-duration="1000">
                     </div>
                 </div>
             </div>
