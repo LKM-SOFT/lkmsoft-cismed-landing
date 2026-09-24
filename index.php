@@ -160,7 +160,7 @@ require __DIR__ . '/includes/header.php';
                 <div class="theme-title">
                     <span class="subtitle" data-aos="fade-up" data-aos-duration="1000"><i data-lucide="heart-pulse"></i>Consultas por especialidad</span>
                     <h2>Hojas de consulta <span>para tu especialidad</span></h2>
-                    <p data-aos="fade-up" data-aos-duration="1000">CISMed incluye 5 hojas de consulta especializadas, cada una con la información que realmente necesitas registrar. <?= e(CONSULTATION_SHEETS_NOTE) ?></p>
+                    <p data-aos="fade-up" data-aos-duration="1000">CISMed incluye la consulta general y hojas de consulta especializadas, cada una con la información que realmente necesitas registrar. <?= e(CONSULTATION_SHEETS_NOTE) ?></p>
                 </div>
                 <div class="row g-4">
                     <?php foreach (SPECIALTIES as $specialty): ?>

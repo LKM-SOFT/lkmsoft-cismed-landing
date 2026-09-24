@@ -3,8 +3,8 @@ $page = [
     'slug'        => 'specialties',
     'title'       => 'Especialidades',
     'heading'     => 'Hojas de consulta para tu especialidad',
-    'lead'        => 'CISMed incluye 5 hojas de consulta especializadas: medicina general, ginecología, pediatría, estomatología y oftalmología, integradas a la historia clínica del paciente.',
-    'description' => 'Especialidades de CISMed: hojas de consulta de medicina general, ginecología con control prenatal y climaterio, pediatría con cartilla de vacunación y gráficas de crecimiento, estomatología con odontograma, y oftalmología con examen optométrico, segmento anterior, fondo de ojo y graduación de lentes.',
+    'lead'        => 'CISMed incluye la consulta general y hojas de consulta especializadas para ginecología, pediatría, estomatología y oftalmología, integradas a la historia clínica del paciente.',
+    'description' => 'Especialidades de CISMed: consulta general y hojas de consulta especializadas de ginecología con control prenatal y climaterio, pediatría con cartilla de vacunación y gráficas de crecimiento, estomatología con odontograma, y oftalmología con examen optométrico, segmento anterior, fondo de ojo y graduación de lentes.',
 ];
 
 require __DIR__ . '/includes/head.php';

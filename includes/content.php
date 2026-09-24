@@ -78,7 +78,7 @@ const MODULES = [
         'anchor'  => 'consultations',
         'icon'    => 'stethoscope',
         'title'   => 'Consultas',
-        'summary' => '5 hojas de consulta especializadas, historial, estadísticas y gráficas de crecimiento',
+        'summary' => 'Consulta general y hojas de consulta especializadas, historial, estadísticas y gráficas de crecimiento',
         'heading' => 'Consultas con el formato de tu especialidad',
         'intro'   => 'Registra cada consulta con la hoja que tu especialidad necesita y revisa la evolución del paciente. ' . CONSULTATION_SHEETS_NOTE,
         'points'  => [
@@ -91,7 +91,7 @@ const MODULES = [
             'Estadísticas de consultas',
             'Gráficas de crecimiento',
         ],
-        'tags'    => ['5 hojas de consulta', 'Odontograma', 'Gráficas de crecimiento'],
+        'tags'    => ['Hojas especializadas', 'Odontograma', 'Gráficas de crecimiento'],
     ],
     [
         'anchor'  => 'prescriptions',
@@ -291,7 +291,7 @@ const FAQ_GROUPS = [
         'title' => 'Expediente y consultas',
         'items' => [
             ['q' => '¿Qué incluye la historia clínica?', 'a' => 'Hoja frontal; antecedentes heredofamiliares, patológicos, no patológicos, familiares y sociales; antecedentes ginecológicos y gineco-obstétricos; desarrollo motor; contactos del paciente y cartilla de vacunación basada en las cartillas oficiales vigentes'],
-            ['q' => '¿Qué especialidades tienen hoja de consulta?', 'a' => 'CISMed incluye 5 hojas de consulta: medicina general; ginecología, con control prenatal y diagnóstico de climaterio; pediatría, estomatología, con odontograma, y oftalmología, con examen optométrico, segmento anterior, fondo de ojo y graduación de lentes. También hay historial de consultas, estadísticas y gráficas de crecimiento. ' . CONSULTATION_SHEETS_NOTE],
+            ['q' => '¿Qué especialidades tienen hoja de consulta?', 'a' => 'CISMed incluye la hoja de consulta general y hojas de consulta especializadas: ginecología, con control prenatal y diagnóstico de climaterio; pediatría; estomatología, con odontograma, y oftalmología, con examen optométrico, segmento anterior, fondo de ojo y graduación de lentes. También hay historial de consultas, estadísticas y gráficas de crecimiento. ' . CONSULTATION_SHEETS_NOTE],
             ['q' => '¿Puedo usar mi propio formato de receta?', 'a' => 'Sí. Cada médico configura el formato de receta que usa en su práctica'],
         ],
     ],
