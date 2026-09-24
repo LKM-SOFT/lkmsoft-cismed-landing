@@ -64,8 +64,8 @@ $isIndexable = empty($page['robots']) || !str_contains($page['robots'], 'noindex
     <meta property="og:url" content="<?= e($canonical) ?>">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/webp" href="<?= asset('images/brand/favicon.webp') ?>">
-    <link rel="apple-touch-icon" href="<?= asset('images/brand/cismed-logo.webp') ?>">
+    <link rel="icon" type="image/svg+xml" href="<?= asset('images/brand/favicon.svg') ?>">
+    <link rel="apple-touch-icon" href="<?= asset('images/brand/cismed.svg') ?>">
     <meta name="theme-color" content="#0072e8">
 
     <!-- Fonts -->

@@ -23,7 +23,7 @@ const ANALYTICS_HOSTS = ['cismed.mx', 'www.cismed.mx'];
 
 // CIS application (sign-up lives there, not in the landing).
 const APP_URL_PRODUCTION = 'https://app.cismed.mx';
-const APP_URL_LOCAL = 'http://localhost:8090';
+const APP_URL_LOCAL = 'https://sandbox.cismed.mx'; // http://localhost:8090
 
 /**
  * Absolute URL inside the CIS application, pointing to production or to the local instance.

@@ -32,11 +32,11 @@ function account_link_attributes(string $location): string
 function brand_logo(string $variant = 'dark'): string
 {
     $isLight = $variant === 'light';
-    $symbol = asset($isLight ? 'images/brand/cismed-logo-white.webp' : 'images/brand/cismed-logo.webp');
+    $symbol = asset($isLight ? 'images/brand/cismed-white.svg' : 'images/brand/cismed.svg');
     $class = 'brand-mark' . ($isLight ? ' brand-mark-light' : '');
 
     return '<span class="' . $class . '">'
-        . '<img src="' . $symbol . '" width="182" height="173" alt="">'
+        . '<img src="' . $symbol . '" width="333" height="267" alt="">'
         . '<span class="brand-name">CIS<span>Med</span></span>'
         . '</span>';
 }
