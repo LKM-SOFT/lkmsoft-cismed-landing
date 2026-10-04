@@ -10,8 +10,8 @@ const SITE_LOCALE = 'es_MX';
 const CONTACT_EMAIL = 'info@cismed.mx';
 
 // WhatsApp contact: number in international format (digits only), how it is shown, and the prefilled message.
-const WHATSAPP_NUMBER = '5215540624411';
-const WHATSAPP_DISPLAY = '55 4062 4411';
+const WHATSAPP_NUMBER = '5215654073364';
+const WHATSAPP_DISPLAY = '56 5407 3364';
 const WHATSAPP_MESSAGE = 'Hola CISMED 👋 ¡Me gustaría recibir informes!';
 
 // Canonical production URL (without www), used for canonical, Open Graph and structured data.

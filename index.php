@@ -115,6 +115,7 @@ require __DIR__ . '/includes/header.php';
                 </div>
                 <div class="row g-4">
                     <?php foreach (MODULES as $module): ?>
+                        <?php if (($module['home'] ?? true) === false) continue; ?>
                         <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-duration="500">
                             <a href="<?= url('features') ?>#<?= e($module['anchor']) ?>" class="category-box module-card">
                                 <div class="icon-box"><i data-lucide="<?= e($module['icon']) ?>"></i></div>

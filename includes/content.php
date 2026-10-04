@@ -108,6 +108,23 @@ const MODULES = [
         'tags'    => ['Formato por médico'],
     ],
     [
+        'anchor'  => 'inventory',
+        'icon'    => 'boxes',
+        'title'   => 'Inventario',
+        'summary' => 'Control de medicamentos e insumos, existencias y caducidades',
+        'heading' => 'Medicamentos e insumos bajo control',
+        'intro'   => 'Lleva el control de los medicamentos e insumos de tu consultorio, de sus existencias y de sus fechas de caducidad',
+        'points'  => [
+            'Control de medicamentos e insumos del consultorio',
+            'Control de existencias',
+            'Control de caducidades',
+            'Disponible a partir del plan Premium',
+        ],
+        'tags'    => ['Medicamentos', 'Insumos', 'Existencias', 'Caducidades'],
+        // Kept off the home grid, which shows the modules four per row
+        'home'    => false,
+    ],
+    [
         'anchor'  => 'billing',
         'icon'    => 'receipt',
         'title'   => 'Facturación CFDI',
@@ -235,6 +252,7 @@ const PLAN_FEATURES = [
     'Notificaciones y recordatorios vía SMS',
     'Notificaciones y recordatorios vía WhatsApp',
     'Facturación electrónica',
+    'Inventario',
 ];
 
 /**
@@ -243,11 +261,11 @@ const PLAN_FEATURES = [
  */
 const PLANS = [
     ['name' => 'Classic',  'price' => 400,  'doctors' => 1,  'assistants' => '1',         'included' => 7],
-    ['name' => 'Master',   'price' => 600,  'doctors' => 2,  'assistants' => '2',         'included' => 9],
-    ['name' => 'Premium',  'price' => 900,  'doctors' => 3,  'assistants' => 'Ilimitado', 'included' => 10],
-    ['name' => 'Gold',     'price' => 1250, 'doctors' => 5,  'assistants' => 'Ilimitado', 'included' => 10],
-    ['name' => 'Platinum', 'price' => 1750, 'doctors' => 7,  'assistants' => 'Ilimitado', 'included' => 10],
-    ['name' => 'Black',    'price' => 2500, 'doctors' => 10, 'assistants' => 'Ilimitado', 'included' => 10],
+    ['name' => 'Master',   'price' => 1000, 'doctors' => 2,  'assistants' => '2',         'included' => 9],
+    ['name' => 'Premium',  'price' => 2100, 'doctors' => 3,  'assistants' => 'Ilimitado', 'included' => 11],
+    ['name' => 'Gold',     'price' => 3500, 'doctors' => 5,  'assistants' => 'Ilimitado', 'included' => 11],
+    ['name' => 'Platinum', 'price' => 4900, 'doctors' => 7,  'assistants' => 'Ilimitado', 'included' => 11],
+    ['name' => 'Black',    'price' => 7000, 'doctors' => 10, 'assistants' => 'Ilimitado', 'included' => 11],
 ];
 
 /** Billing cycles available for every plan. */
