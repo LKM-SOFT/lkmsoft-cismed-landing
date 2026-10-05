@@ -175,7 +175,11 @@ require __DIR__ . '/includes/header.php';
                         </div>
                     <?php endforeach; ?>
 
-                    <?php foreach (UPCOMING_SPECIALTIES as $upcoming): ?>
+                    <?php
+                    // Only as many upcoming cards as it takes to complete the last row of four
+                    $upcomingCount = (4 - count(SPECIALTIES) % 4) % 4 ?: 4;
+                    ?>
+                    <?php foreach (array_slice(UPCOMING_SPECIALTIES, 0, $upcomingCount) as $upcoming): ?>
                         <!-- Hidden on phones: stacked one per row they only make the section longer. -->
                         <div class="col-lg-3 col-sm-6 d-none d-sm-block" data-aos="fade-up" data-aos-duration="500">
                             <div class="specialty-card specialty-card-upcoming" aria-label="<?= e($upcoming['title']) ?>: hoja de consulta en desarrollo">
