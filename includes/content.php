@@ -89,6 +89,7 @@ const MODULES = [
             'Hoja de consulta de pediatría',
             'Hoja de consulta de estomatología, con odontograma',
             'Hoja de consulta de oftalmología, con examen optométrico, segmento anterior, fondo de ojo y graduación de lentes',
+            'Hoja de consulta de nutrición, con antropometría, recordatorio de 24 horas y plan de alimentación por equivalentes',
             'Historial de consultas del paciente',
             'Estadísticas de consultas',
             'Gráficas de crecimiento',
@@ -228,6 +229,20 @@ const SPECIALTIES = [
             'Diagnósticos por ojo con catálogo CIE-10',
         ],
     ],
+    [
+        'slug'    => 'nutrition',
+        'icon'    => 'apple',
+        'title'   => 'Nutrición',
+        'summary' => 'Antropometría, recordatorio de 24 horas y plan de alimentación por equivalentes',
+        'intro'   => 'Registra las mediciones y la alimentación de tus pacientes y da seguimiento a su evolución desde el expediente',
+        'points'  => [
+            'Hoja de consulta de nutrición',
+            'Antropometría',
+            'Recordatorio de 24 horas',
+            'Plan de alimentación por equivalentes',
+            'Evolución del paciente',
+        ],
+    ],
 ];
 
 /**
@@ -313,7 +328,7 @@ const FAQ_GROUPS = [
         'title' => 'Expediente y consultas',
         'items' => [
             ['q' => '¿Qué incluye la historia clínica?', 'a' => 'Hoja frontal; antecedentes heredofamiliares, patológicos, no patológicos, familiares y sociales; antecedentes ginecológicos y gineco-obstétricos; desarrollo motor; contactos del paciente y cartilla de vacunación basada en las cartillas oficiales vigentes'],
-            ['q' => '¿Qué especialidades tienen hoja de consulta?', 'a' => 'CISMed incluye la hoja de consulta general y hojas de consulta especializadas: ginecología, con control prenatal y diagnóstico de climaterio; pediatría; estomatología, con odontograma, y oftalmología, con examen optométrico, segmento anterior, fondo de ojo y graduación de lentes. También hay historial de consultas, estadísticas y gráficas de crecimiento. ' . CONSULTATION_SHEETS_NOTE],
+            ['q' => '¿Qué especialidades tienen hoja de consulta?', 'a' => 'CISMed incluye la hoja de consulta general y hojas de consulta especializadas: ginecología, con control prenatal y diagnóstico de climaterio; pediatría; estomatología, con odontograma; oftalmología, con examen optométrico, segmento anterior, fondo de ojo y graduación de lentes, y nutrición, con antropometría, recordatorio de 24 horas, plan de alimentación por equivalentes y evolución del paciente. También hay historial de consultas, estadísticas y gráficas de crecimiento. ' . CONSULTATION_SHEETS_NOTE],
             ['q' => '¿Puedo usar mi propio formato de receta?', 'a' => 'Sí. Cada médico configura el formato de receta que usa en su práctica'],
         ],
     ],
