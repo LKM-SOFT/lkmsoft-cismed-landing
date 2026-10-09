@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta name="description" content="Soccer League">
+		<meta name="description" content="CISMed">
 		<meta name="keywords" content="">
-		<meta name="author" content="SoftIXX">
+		<meta name="author" content="LKM Soft">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<!-- Mobile Specific Meta Tag-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">		
 		<!-- TITLE PATTERN -->
-		<title>CIS - Clinical Information System</title>
+		<title>CISMed - Clinical Information System</title>
 		<!-- Favicon  -->
     	<link rel="icon" href="assets/src/favicon/fav.png" />
     	<!-- Coming Soon CSS-->
