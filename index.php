@@ -70,7 +70,7 @@ require __DIR__ . '/includes/header.php';
                                 <span class="float-icon bg-success-soft"><i data-lucide="bell-ring"></i></span>
                                 <div>
                                     <strong>Recordatorio enviado</strong>
-                                    <small>Por correo electrónico, SMS y WhatsApp</small>
+                                    <small>Por correo electrónico y WhatsApp</small>
                                 </div>
                             </div>
                             <div class="hero-float-card hero-float-card-bottom d-none d-md-flex" data-aos="fade-right" data-aos-delay="500" data-aos-duration="800">

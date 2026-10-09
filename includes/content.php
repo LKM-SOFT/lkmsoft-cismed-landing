@@ -32,18 +32,17 @@ const MODULES = [
         'anchor'  => 'notifications',
         'icon'    => 'bell-ring',
         'title'   => 'Notificaciones',
-        'summary' => 'Recordatorios de cita por correo electrónico, SMS y WhatsApp, además de avisos internos',
+        'summary' => 'Recordatorios de cita por correo electrónico y WhatsApp, además de avisos internos',
         'heading' => 'Recordatorios que llegan solos',
         'intro'   => 'Mantén informados a tus pacientes y a tu equipo sin tener que llamar ni escribir uno por uno',
         'points'  => [
             'Recordatorios de cita para tus pacientes',
             'Envío por correo electrónico',
-            'Envío por SMS',
             'Envío por WhatsApp',
             'Notificaciones internas para el equipo del consultorio',
-            'El envío por SMS y por WhatsApp está disponible según el plan contratado',
+            'El envío por WhatsApp está disponible según el plan contratado',
         ],
-        'tags'    => ['Correo electrónico', 'SMS', 'WhatsApp', 'Avisos internos'],
+        'tags'    => ['Correo electrónico', 'WhatsApp', 'Avisos internos'],
     ],
     [
         'anchor'  => 'patients',
@@ -264,7 +263,6 @@ const PLAN_FEATURES = [
     'Almacenamiento ilimitado en la nube',
     'Estadísticas y reportes',
     'Notificaciones y recordatorios vía correo electrónico',
-    'Notificaciones y recordatorios vía SMS',
     'Notificaciones y recordatorios vía WhatsApp',
     'Facturación electrónica',
     'Inventario',
@@ -276,11 +274,11 @@ const PLAN_FEATURES = [
  */
 const PLANS = [
     ['name' => 'Classic',  'price' => 400,  'doctors' => 1,  'assistants' => '1',         'included' => 7],
-    ['name' => 'Master',   'price' => 1000, 'doctors' => 2,  'assistants' => '2',         'included' => 9],
-    ['name' => 'Premium',  'price' => 2100, 'doctors' => 3,  'assistants' => 'Ilimitado', 'included' => 11],
-    ['name' => 'Gold',     'price' => 3500, 'doctors' => 5,  'assistants' => 'Ilimitado', 'included' => 11],
-    ['name' => 'Platinum', 'price' => 4900, 'doctors' => 7,  'assistants' => 'Ilimitado', 'included' => 11],
-    ['name' => 'Black',    'price' => 7000, 'doctors' => 10, 'assistants' => 'Ilimitado', 'included' => 11],
+    ['name' => 'Master',   'price' => 1000, 'doctors' => 2,  'assistants' => '2',         'included' => 8],
+    ['name' => 'Premium',  'price' => 2100, 'doctors' => 3,  'assistants' => 'Ilimitado', 'included' => 10],
+    ['name' => 'Gold',     'price' => 3500, 'doctors' => 5,  'assistants' => 'Ilimitado', 'included' => 10],
+    ['name' => 'Platinum', 'price' => 4900, 'doctors' => 7,  'assistants' => 'Ilimitado', 'included' => 10],
+    ['name' => 'Black',    'price' => 7000, 'doctors' => 10, 'assistants' => 'Ilimitado', 'included' => 10],
 ];
 
 /** Billing cycles available for every plan. */
@@ -317,7 +315,7 @@ const FAQ_GROUPS = [
             ['q' => '¿Puedo configurar mi horario de consulta?', 'a' => 'Sí. Defines tu horario por especialidad, fijo o distinto para cada día, con la duración de las citas, un límite de pacientes por día, cupos extra y tus días no laborables'],
             ['q' => '¿Cómo se ve la agenda?', 'a' => 'Cada usuario elige entre la vista clásica y la vista de calendario por día o por semana. En el calendario puedes agendar con un clic en un espacio libre, y tus citas se sincronizan con Google Calendar'],
             ['q' => '¿CISMed se integra con Google Calendar?', 'a' => 'Sí. Tus citas de CISMed se sincronizan con Google Calendar, así que las puedes consultar desde el calendario que ya usas en tu teléfono o computadora.'],
-            ['q' => '¿Se envían recordatorios de cita a los pacientes?', 'a' => 'Sí. CISMed envía recordatorios de cita por correo electrónico, SMS y WhatsApp, además de notificaciones internas para el equipo. El envío por SMS y por WhatsApp está disponible según el plan contratado'],
+            ['q' => '¿Se envían recordatorios de cita a los pacientes?', 'a' => 'Sí. CISMed envía recordatorios de cita por correo electrónico y WhatsApp, además de notificaciones internas para el equipo. El envío por WhatsApp está disponible según el plan contratado'],
             ['q' => '¿Funciona para clínicas con varios médicos?', 'a' => 'Sí. La clínica tiene una cuenta maestra, el administrador puede ver las agendas de varios médicos lado a lado y una cita se puede reprogramar con otro médico'],
             ['q' => '¿Cómo se registran los pacientes?', 'a' => 'El registro ofrece sugerencias y autocompletado, y la CURP del paciente se valida mediante un servicio externo'],
         ],
