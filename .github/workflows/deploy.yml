@@ -1,0 +1,38 @@
+name: Deploy to IONOS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy with rsync
+        uses: burnett01/rsync-deployments@v9
+        with:
+          switches: >-
+            -avz
+            --exclude=.git/
+            --exclude=.github/
+            --exclude=CLAUDE.md
+            --exclude=constitution.md
+            --exclude=README.md
+            --exclude=docs/
+            --exclude=tests/
+            --exclude=tools/
+            --exclude=resource-tmp-folder/
+            --exclude=storage/cache/
+            --exclude=storage/photos/
+            --exclude=includes/*-config.php
+          path: ./
+          remote_path: ${{ secrets.IONOS_REMOTE_PATH }}
+          remote_host: ${{ secrets.IONOS_SSH_HOST }}
+          remote_user: ${{ secrets.IONOS_SSH_USERNAME }}
+          remote_key: ${{ secrets.IONOS_SSH_PRIVATE_KEY }}
+          remote_port: ${{ secrets.IONOS_SSH_PORT || 22 }}
