@@ -1,7 +1,7 @@
 <?php
 /**
  * Site navigation items shared by the header and the footer.
- * Keys are page slugs; values are the labels shown to the user.
+ * Keys are page slugs; values are the labels shown to the user
  */
 
 const MAIN_NAV = [
@@ -17,7 +17,7 @@ const LEGAL_NAV = [
 
 /**
  * Link attributes for the "create account" button: sign-up lives in the CIS application,
- * so it opens in a new tab. analytics.js reports the click with the given location.
+ * so it opens in a new tab. analytics.js reports the click with the given location
  */
 function account_link_attributes(string $location): string
 {
@@ -27,7 +27,7 @@ function account_link_attributes(string $location): string
 
 /**
  * Link attributes for MediRed: it is a separate site, so it opens in a new tab.
- * analytics.js reports the click with the given location.
+ * analytics.js reports the click with the given location
  */
 function medired_link_attributes(string $location): string
 {
@@ -37,7 +37,7 @@ function medired_link_attributes(string $location): string
 
 /**
  * Renders the CISMed logo (symbol + wordmark).
- * Use "dark" on light backgrounds (gray symbol) and "light" on dark backgrounds (white symbol).
+ * Use "dark" on light backgrounds (gray symbol) and "light" on dark backgrounds (white symbol)
  */
 function brand_logo(string $variant = 'dark'): string
 {

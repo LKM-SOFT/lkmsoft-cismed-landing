@@ -18,7 +18,7 @@
 
   const NAME_PATTERN = /^[\p{L}\p{M}]+(?:[\s'.-][\p{L}\p{M}]+)+\.?$/u;
   const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-  // Cédula profesional (SEP): numeric, older licenses have fewer digits.
+  // Cédula profesional (SEP): numeric, older licenses have fewer digits
   const PROFESSIONAL_LICENSE_PATTERN = /^\d{5,8}$/;
 
   const normalizeMobile = (value) => {
@@ -28,33 +28,33 @@
     return digits;
   };
 
-  /** Each validator returns an error message, or an empty string when the value is valid. */
+  /** Each validator returns an error message, or an empty string when the value is valid */
   const validators = {
     full_name: (field) => {
       const value = field.value.trim().replace(/\s+/g, " ");
-      if (!value) return "Escribe tu nombre y apellidos.";
-      if (value.length < 5 || !NAME_PATTERN.test(value)) return "Escribe tu nombre y al menos un apellido, solo con letras.";
+      if (!value) return "Escribe tu nombre y apellidos";
+      if (value.length < 5 || !NAME_PATTERN.test(value)) return "Escribe tu nombre y al menos un apellido, solo con letras";
       return "";
     },
     professional_license: (field) => {
       const value = field.value.replace(/[\s-]+/g, "");
-      if (!value) return "Escribe tu cédula profesional.";
-      if (!PROFESSIONAL_LICENSE_PATTERN.test(value)) return "La cédula profesional debe tener entre 5 y 8 dígitos, solo números.";
+      if (!value) return "Escribe tu cédula profesional";
+      if (!PROFESSIONAL_LICENSE_PATTERN.test(value)) return "La cédula profesional debe tener entre 5 y 8 dígitos, solo números";
       return "";
     },
-    specialty: (field) => (field.value ? "" : "Selecciona tu especialidad."),
+    specialty: (field) => (field.value ? "" : "Selecciona tu especialidad"),
     mobile_phone: (field) => {
-      if (!field.value.trim()) return "Escribe tu número de celular.";
-      if (normalizeMobile(field.value).length !== 10) return "El celular debe tener 10 dígitos.";
+      if (!field.value.trim()) return "Escribe tu número de celular";
+      if (normalizeMobile(field.value).length !== 10) return "El celular debe tener 10 dígitos";
       return "";
     },
     email: (field) => {
       const value = field.value.trim();
-      if (!value) return "Escribe tu correo electrónico.";
-      if (!EMAIL_PATTERN.test(value)) return "Escribe un correo electrónico válido.";
+      if (!value) return "Escribe tu correo electrónico";
+      if (!EMAIL_PATTERN.test(value)) return "Escribe un correo electrónico válido";
       return "";
     },
-    privacy_consent: (field) => (field.checked ? "" : "Debes aceptar el aviso de privacidad para enviar tus datos."),
+    privacy_consent: (field) => (field.checked ? "" : "Debes aceptar el aviso de privacidad para enviar tus datos"),
   };
 
   const setFieldError = (name, message) => {
@@ -91,7 +91,7 @@
     submitLabel.textContent = isLoading ? "Enviando…" : "Enviar solicitud";
   };
 
-  // Live feedback: validate a field once the user leaves it, then re-check while they fix it.
+  // Live feedback: validate a field once the user leaves it, then re-check while they fix it
   Object.keys(validators).forEach((name) => {
     const field = form.elements[name];
     const eventName = field.type === "checkbox" || field.tagName === "SELECT" ? "change" : "blur";
@@ -102,7 +102,7 @@
     });
   });
 
-  // The professional license only accepts digits: drop anything else while typing.
+  // The professional license only accepts digits: drop anything else while typing
   form.elements.professional_license.addEventListener("input", (event) => {
     const field = event.target;
     const digits = field.value.replace(/\D+/g, "");
@@ -127,7 +127,7 @@
       const result = await response.json();
 
       if (result.ok) {
-        // Conversion for Google Analytics (defined in analytics.js on production only). No personal data is sent.
+        // Conversion for Google Analytics (defined in analytics.js on production only). No personal data is sent
         window.trackEvent?.("generate_lead", { form_name: "contact" });
 
         successMessage.textContent = result.message;
@@ -140,7 +140,7 @@
       Object.entries(result.errors || {}).forEach(([name, message]) => setFieldError(name, message));
       showFormError(result.message);
     } catch (error) {
-      showFormError("No pudimos enviar tu solicitud. Revisa tu conexión e inténtalo de nuevo.");
+      showFormError("No pudimos enviar tu solicitud. Revisa tu conexión e inténtalo de nuevo");
     } finally {
       setLoading(false);
     }

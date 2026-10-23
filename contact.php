@@ -5,7 +5,7 @@ contact_start_session();
 contact_mark_form_rendered();
 $csrfToken = contact_csrf_token();
 
-// Result of a submission without JavaScript (see actions/send-contact.php).
+// Result of a submission without JavaScript (see actions/send-contact.php)
 $flash = $_SESSION['contact_flash'] ?? null;
 unset($_SESSION['contact_flash']);
 
@@ -17,13 +17,13 @@ $page = [
     'slug'        => 'contact',
     'title'       => 'Contacto',
     'heading'     => 'Solicita información sobre CISMed',
-    'lead'        => 'Déjanos tus datos y nos pondremos en contacto contigo para resolver tus dudas.',
+    'lead'        => 'Déjanos tus datos y nos pondremos en contacto contigo para resolver tus dudas',
     'description' => 'Solicita información sobre CISMed, el expediente clínico electrónico en la nube para médicos y clínicas en México.',
     'scripts'     => ['js/contact-form.js'],
 ];
 
 /**
- * Returns the previous value of a field after a failed no-JS submission.
+ * Returns the previous value of a field after a failed no-JS submission
  */
 function old_value(array $old, string $field): string
 {
@@ -31,7 +31,7 @@ function old_value(array $old, string $field): string
 }
 
 /**
- * Renders the Bootstrap validation classes and message for a field.
+ * Renders the Bootstrap validation classes and message for a field
  */
 function field_error(array $errors, string $field): array
 {
@@ -59,7 +59,7 @@ require __DIR__ . '/includes/page-header.php';
                                 <div>
                                     <h2>Te contactamos</h2>
                                     <ul>
-                                        <li>Con tus datos nos comunicamos contigo por teléfono o correo electrónico para platicarte cómo CISMed puede ayudarte.</li>
+                                        <li>Con tus datos nos comunicamos contigo por teléfono o correo electrónico para platicarte cómo CISMed puede ayudarte</li>
                                     </ul>
                                 </div>
                             </div>
@@ -105,7 +105,7 @@ require __DIR__ . '/includes/page-header.php';
 
                             <form class="theme-form contact-form<?= $isSent ? ' d-none' : '' ?>" action="<?= url('actions/send-contact.php') ?>" method="post" novalidate data-contact-form>
                                 <h2 class="main-title">Déjanos tus datos</h2>
-                                <p class="form-intro">Todos los campos son obligatorios.</p>
+                                <p class="form-intro">Todos los campos son obligatorios</p>
 
                                 <div class="form-alert alert alert-danger<?= !$isSent && $flash ? '' : ' d-none' ?>" role="alert" data-form-error>
                                     <i data-lucide="circle-alert"></i>
@@ -114,7 +114,7 @@ require __DIR__ . '/includes/page-header.php';
 
                                 <input type="hidden" name="csrf_token" value="<?= e($csrfToken) ?>">
 
-                                <!-- Honeypot: hidden from people, bots tend to fill it. -->
+                                <!-- Honeypot: hidden from people, bots tend to fill it -->
                                 <div class="form-honeypot" aria-hidden="true">
                                     <label for="website">Sitio web</label>
                                     <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
@@ -132,7 +132,7 @@ require __DIR__ . '/includes/page-header.php';
                                         <?php $field = field_error($errors, 'professional_license'); ?>
                                         <label for="professional_license" class="form-label">Cédula profesional</label>
                                         <input type="text" class="form-control<?= $field['class'] ?>" id="professional_license" name="professional_license" value="<?= old_value($old, 'professional_license') ?>" inputmode="numeric" maxlength="10" autocomplete="off" spellcheck="false" required aria-describedby="professional_license-help professional_license-error">
-                                        <div class="form-text" id="professional_license-help">Solo números, como aparece en tu cédula.</div>
+                                        <div class="form-text" id="professional_license-help">Solo números, como aparece en tu cédula</div>
                                         <div class="invalid-feedback" id="professional_license-error"><?= $field['message'] ?></div>
                                     </div>
 
@@ -152,7 +152,7 @@ require __DIR__ . '/includes/page-header.php';
                                         <?php $field = field_error($errors, 'mobile_phone'); ?>
                                         <label for="mobile_phone" class="form-label">Celular</label>
                                         <input type="tel" class="form-control<?= $field['class'] ?>" id="mobile_phone" name="mobile_phone" value="<?= old_value($old, 'mobile_phone') ?>" inputmode="tel" autocomplete="tel-national" maxlength="20" required aria-describedby="mobile_phone-help mobile_phone-error">
-                                        <div class="form-text" id="mobile_phone-help">10 dígitos.</div>
+                                        <div class="form-text" id="mobile_phone-help">10 dígitos</div>
                                         <div class="invalid-feedback" id="mobile_phone-error"><?= $field['message'] ?></div>
                                     </div>
 

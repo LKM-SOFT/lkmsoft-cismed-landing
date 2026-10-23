@@ -1,6 +1,6 @@
 <?php
 /**
- * Site header with main navigation. Expects $page['slug'].
+ * Site header with main navigation. Expects $page['slug']
  */
 $currentSlug = $page['slug'] ?? '';
 ?>
@@ -18,7 +18,7 @@ $currentSlug = $page['slug'] ?? '';
                 <li class="d-xl-none d-inline-block mobile-close">
                     <h3>Menú<button type="button" class="close-menu" aria-label="Cerrar menú"><i data-lucide="x"></i></button></h3>
                 </li>
-                <!-- Sliding highlight behind the active link (desktop segmented control). -->
+                <!-- Sliding highlight behind the active link (desktop segmented control) -->
                 <li class="menu-pill" aria-hidden="true" data-nav-pill></li>
                 <?php foreach (MAIN_NAV as $slug => $label): ?>
                     <li class="menu-link-item">

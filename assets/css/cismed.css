@@ -39,14 +39,14 @@
   --secondary-color: 6, 40, 75;
   --content-color: 58, 58, 58;
   --border-color: 239, 239, 239;
-  /* Darker brand blue for small text: keeps WCAG AA contrast (4.5:1) on tinted backgrounds. */
+  /* Darker brand blue for small text: keeps WCAG AA contrast (4.5:1) on tinted backgrounds */
   --main-text-color: 0, 94, 194;
 }
 
 /**=====================
   2. Accessibility
 ==========================**/
-/* Entrance animations (AOS) start off-screen; never let them create horizontal scroll. */
+/* Entrance animations (AOS) start off-screen; never let them create horizontal scroll */
 html,
 body {
   overflow-x: clip;
@@ -129,7 +129,7 @@ header .brand-logo img {
   height: auto;
 }
 
-/* Spanish uses sentence case: undo the template's capitalize. */
+/* Spanish uses sentence case: undo the template's capitalize */
 h1,
 .navbar-menu .menu-item {
   text-transform: none;
@@ -147,7 +147,7 @@ header .menu-btn {
   color: rgba(var(--black), 1);
 }
 
-/* Off-canvas menu: keep its links out of the keyboard tab order while it is closed. */
+/* Off-canvas menu: keep its links out of the keyboard tab order while it is closed */
 @media (max-width: 1199px) {
   .navbar-menu .menu-items {
     visibility: hidden;
@@ -164,7 +164,7 @@ header .menu-btn {
   }
 }
 
-/* Desktop: logo left, centered iOS-style segmented navigation, action button right. */
+/* Desktop: logo left, centered iOS-style segmented navigation, action button right */
 @media (min-width: 1200px) {
   header#header {
     display: grid;
@@ -218,7 +218,7 @@ header .menu-btn {
     color: rgba(var(--white), 1) !important;
   }
 
-  /* Page load: the active link carries the pill look itself, so nothing moves or flickers. */
+  /* Page load: the active link carries the pill look itself, so nothing moves or flickers */
   .navbar-menu .menu-items .menu-item.first-item.active,
   .navbar-menu .menu-pill {
     background: linear-gradient(180deg, rgba(var(--main-color), 1) 0%, rgba(var(--main-text-color), 1) 100%);
@@ -234,11 +234,11 @@ header .menu-btn {
     border-radius: 50px;
     opacity: 0;
     pointer-events: none;
-    /* The template animates every menu <li>; the pill is moved only by main.js (Web Animations API). */
+    /* The template animates every menu <li>; the pill is moved only by main.js (Web Animations API) */
     transition: none;
   }
 
-  /* After a click: the sliding pill takes over from the static highlight until the next page loads. */
+  /* After a click: the sliding pill takes over from the static highlight until the next page loads */
   .navbar-menu .menu-items.is-sliding .menu-pill {
     opacity: 1;
   }
@@ -513,7 +513,7 @@ header .menu-btn {
   height: 28px;
 }
 
-/* Specialties whose consultation sheet is still being built: blurred ending + loading placeholder. */
+/* Specialties whose consultation sheet is still being built: blurred ending + loading placeholder */
 .specialty-card-upcoming {
   cursor: default;
   border-style: dashed;
@@ -612,7 +612,7 @@ header .menu-btn {
   color: rgba(var(--main-color), 1);
 }
 
-/* Email and WhatsApp each on their own line, centered. */
+/* Email and WhatsApp each on their own line, centered */
 .contact-box a {
   display: block;
   font-weight: 500;
@@ -636,7 +636,7 @@ header .menu-btn {
   color: rgba(var(--content-color), 1);
 }
 
-/* Anchored sections must not hide behind the sticky header. */
+/* Anchored sections must not hide behind the sticky header */
 [id] {
   scroll-margin-top: 110px;
 }
@@ -783,7 +783,7 @@ header .menu-btn {
   box-shadow: 0 30px 60px -30px rgba(var(--main-color), 0.18);
 }
 
-/* Not a <header> element: the template styles every <header> as the site header. */
+/* Not a <header> element: the template styles every <header> as the site header */
 .specialty-detail-heading {
   display: flex;
   align-items: center;
@@ -888,7 +888,7 @@ header .menu-btn {
   margin-left: -1.5em;
 }
 
-/* Kept off-screen instead of display:none, which some bots detect. */
+/* Kept off-screen instead of display:none, which some bots detect */
 .form-honeypot {
   position: absolute;
   left: -9999px;
@@ -1169,7 +1169,7 @@ button.btn-main:disabled {
   animation: whatsapp-pulse 2.4s ease-out infinite;
 }
 
-/* Keep the floating button out of the way while the mobile menu is open. */
+/* Keep the floating button out of the way while the mobile menu is open */
 .menu-open .whatsapp-float {
   opacity: 0;
   pointer-events: none;
@@ -1210,7 +1210,7 @@ button.btn-main:disabled {
   .whatsapp-float::before { animation: none; }
 }
 
-/* WhatsApp buttons: the outline style gets the WhatsApp green icon. */
+/* WhatsApp buttons: the outline style gets the WhatsApp green icon */
 .btn-whatsapp .whatsapp-icon {
   color: #1da851;
 }
@@ -1317,7 +1317,7 @@ button.btn-main:disabled {
   font-size: 15px;
 }
 
-/* While the banner is visible, lift the WhatsApp button so they do not overlap. */
+/* While the banner is visible, lift the WhatsApp button so they do not overlap */
 body:has(.cookie-banner:not([hidden])) .whatsapp-float {
   bottom: 150px;
 }
@@ -1347,7 +1347,7 @@ body:has(.cookie-banner:not([hidden])) .whatsapp-float {
   }
 }
 
-/* "Preferencias de cookies" looks like the other footer links. */
+/* "Preferencias de cookies" looks like the other footer links */
 footer .footer-link-button {
   padding: 0;
   border: 0;

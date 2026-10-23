@@ -1,7 +1,7 @@
 <?php
 /**
  * Document head. Expects a $page array with: slug, title, description.
- * Optional: robots (e.g. "noindex"), schema (list of JSON-LD objects).
+ * Optional: robots (e.g. "noindex"), schema (list of JSON-LD objects)
  */
 require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/navigation.php';
@@ -21,7 +21,7 @@ $isIndexable = empty($page['robots']) || !str_contains($page['robots'], 'noindex
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <?php if (analytics_enabled()): ?>
-        <!-- Google tag (gtag.js) with Consent Mode v2: nothing is stored until the visitor accepts cookies. -->
+        <!-- Google tag (gtag.js) with Consent Mode v2: nothing is stored until the visitor accepts cookies -->
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag() { dataLayer.push(arguments); }

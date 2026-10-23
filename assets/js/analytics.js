@@ -18,7 +18,7 @@
   /**=====================
     1. Event helper
   ==========================**/
-  /** Sends a GA4 event. Exposed so other scripts (e.g. the contact form) can report conversions. */
+  /** Sends a GA4 event. Exposed so other scripts (e.g. the contact form) can report conversions */
   window.trackEvent = (name, params = {}) => {
     if (typeof window.gtag === "function") window.gtag("event", name, params);
   };
@@ -40,7 +40,7 @@
     try {
       localStorage.setItem(CONSENT_KEY, choice);
     } catch (error) {
-      // Private browsing can block storage: the choice then lasts only for this page view.
+      // Private browsing can block storage: the choice then lasts only for this page view
     }
   };
 
@@ -64,7 +64,7 @@
     button.addEventListener("click", () => applyChoice(button.dataset.cookieChoice));
   });
 
-  // "Preferencias de cookies" in the footer reopens the banner to change the choice.
+  // "Preferencias de cookies" in the footer reopens the banner to change the choice
   document.querySelectorAll("[data-cookie-preferences]").forEach((button) => {
     button.addEventListener("click", () => {
       showBanner();
@@ -95,7 +95,7 @@
     }
 
     if (link.protocol === "mailto:") {
-      // The <body> class is "page-<slug>" (see includes/head.php): report the page when it is not the footer.
+      // The <body> class is "page-<slug>" (see includes/head.php): report the page when it is not the footer
       const pageName = document.body.className.replace(/^page-/, "");
       window.trackEvent("email_click", { link_location: link.closest("footer") ? "footer" : pageName });
     }

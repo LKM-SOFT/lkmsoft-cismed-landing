@@ -3,7 +3,7 @@ $page = [
     'slug'        => 'specialties',
     'title'       => 'Especialidades',
     'heading'     => 'Hojas de consulta para tu especialidad',
-    'lead'        => 'CISMed incluye la consulta general y hojas de consulta especializadas para ginecología, pediatría, estomatología, oftalmología, nutrición y cardiología, integradas a la historia clínica del paciente.',
+    'lead'        => 'CISMed incluye la consulta general y hojas de consulta especializadas para ginecología, pediatría, estomatología, oftalmología, nutrición y cardiología, integradas a la historia clínica del paciente',
     'description' => 'Especialidades de CISMed: consulta general y hojas de consulta especializadas de ginecología con control prenatal y climaterio, pediatría con cartilla de vacunación y gráficas de crecimiento, estomatología con odontograma, oftalmología con examen optométrico, segmento anterior, fondo de ojo y graduación de lentes, nutrición con antropometría, recordatorio de 24 horas y plan de alimentación por equivalentes, y cardiología con riesgo cardiovascular, electrocardiograma y ecocardiograma.',
 ];
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Call to action block that leads to the contact form.
+ * Call to action block that leads to the contact form
  */
 ?>
         <!-- call to action section start -->
@@ -12,7 +12,7 @@
                             <div class="theme-title text-start">
                                 <span class="subtitle" data-aos="fade-up" data-aos-duration="1000"><i data-lucide="send"></i>Hablemos</span>
                                 <h2>¿Listo para <span>ordenar tu consultorio?</span></h2>
-                                <p data-aos="fade-up" data-aos-duration="1000">Déjanos tus datos y te contactamos para platicarte cómo CISMed puede ayudarte en tu práctica diaria.</p>
+                                <p data-aos="fade-up" data-aos-duration="1000">Déjanos tus datos y te contactamos para platicarte cómo CISMed puede ayudarte en tu práctica diaria</p>
                                 <div class="btn-sec" data-aos="fade-up" data-aos-duration="1000">
                                     <a <?= account_link_attributes('call_to_action') ?> class="btn-main"><span>Crear cuenta</span></a>
                                     <a href="<?= url('contact') ?>" class="btn-outline"><span>Solicitar información</span></a>

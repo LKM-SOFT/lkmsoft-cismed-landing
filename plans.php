@@ -3,7 +3,7 @@ $page = [
     'slug'        => 'plans',
     'title'       => 'Planes',
     'heading'     => 'Planes para cada tamaño de consultorio',
-    'lead'        => 'Elige el plan según cuántos médicos y asistentes trabajan contigo. Todos los planes incluyen la agenda, el expediente y las recetas.',
+    'lead'        => 'Elige el plan según cuántos médicos y asistentes trabajan contigo. Todos los planes incluyen la agenda, el expediente y las recetas',
     'description' => 'Planes y precios de CISMed: 6 licencias desde $400 MXN al mes con IVA incluido, para consultorios de 1 a 10 médicos, con pago mensual, trimestral, semestral o anual.',
 ];
 

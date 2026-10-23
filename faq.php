@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/includes/content.php';
 
-// Structured data so search engines can read the questions and answers.
+// Structured data so search engines can read the questions and answers
 $faqSchema = [
     '@context'   => 'https://schema.org',
     '@type'      => 'FAQPage',
@@ -21,7 +21,7 @@ $page = [
     'slug'        => 'faq',
     'title'       => 'Preguntas frecuentes',
     'heading'     => 'Preguntas frecuentes',
-    'lead'        => 'Resolvemos las dudas más comunes sobre CISMed. Si no encuentras lo que buscas, escríbenos.',
+    'lead'        => 'Resolvemos las dudas más comunes sobre CISMed. Si no encuentras lo que buscas, escríbenos',
     'description' => 'Preguntas frecuentes sobre CISMed: instalación, agenda médica, recordatorios, historia clínica, facturación CFDI, seguridad de los datos y licencias.',
     'schema'      => [$faqSchema],
 ];
