@@ -1,6 +1,6 @@
 <?php
 /**
- * Global site configuration.
+ * Global site configuration
  */
 
 const SITE_NAME = 'CISMed';
@@ -9,27 +9,27 @@ const COMPANY_NAME = 'LKM Soft';
 const SITE_LOCALE = 'es_MX';
 const CONTACT_EMAIL = 'info@cismed.mx';
 
-// WhatsApp contact: number in international format (digits only), how it is shown, and the prefilled message.
+// WhatsApp contact: number in international format (digits only), how it is shown, and the prefilled message
 const WHATSAPP_NUMBER = '5215654073364';
 const WHATSAPP_DISPLAY = '56 5407 3364';
 const WHATSAPP_MESSAGE = 'Hola CISMED 👋 ¡Me gustaría recibir informes!';
 
-// Canonical production URL (without www), used for canonical, Open Graph and structured data.
+// Canonical production URL (without www), used for canonical, Open Graph and structured data
 const SITE_URL = 'https://cismed.mx';
 
-// Google Analytics 4. The tag only loads on these hosts, so local development never sends visits.
+// Google Analytics 4. The tag only loads on these hosts, so local development never sends visits
 const GA_MEASUREMENT_ID = 'G-YZ7V24DNB5';
 const ANALYTICS_HOSTS = ['cismed.mx', 'www.cismed.mx'];
 
-// MediRed, LKM Soft's online medical directory. Included in every CISMed plan; the landing only links to it.
+// MediRed, LKM Soft's online medical directory. Included in every CISMed plan; the landing only links to it
 const MEDIRED_URL = 'https://medired.mx';
 
-// CIS application (sign-up lives there, not in the landing).
+// CIS application (sign-up lives there, not in the landing)
 const APP_URL_PRODUCTION = 'https://app.cismed.mx';
 const APP_URL_LOCAL = 'https://sandbox.cismed.mx'; // http://localhost:8090
 
 /**
- * Absolute URL inside the CIS application, pointing to production or to the local instance.
+ * Absolute URL inside the CIS application, pointing to production or to the local instance
  */
 function app_url(string $path = ''): string
 {
@@ -40,19 +40,19 @@ function app_url(string $path = ''): string
 }
 
 /**
- * Sign-up page for doctors.
+ * Sign-up page for doctors
  */
 function registration_url(): string
 {
     return app_url('registration/doctor');
 }
 
-/** localStorage key that remembers the visitor's cookie choice ("granted" or "denied"). */
+/** localStorage key that remembers the visitor's cookie choice ("granted" or "denied") */
 const COOKIE_CONSENT_KEY = 'cismed_cookie_consent';
 
 /**
  * Base path of the site, so links work both at the domain root and inside a local subfolder.
- * It is derived from the project folder, so scripts in subfolders (e.g. actions/) get the same value.
+ * It is derived from the project folder, so scripts in subfolders (e.g. actions/) get the same value
  */
 function base_path(): string
 {
@@ -74,7 +74,7 @@ function base_path(): string
 }
 
 /**
- * Builds a site-relative URL for a page slug or an asset path.
+ * Builds a site-relative URL for a page slug or an asset path
  */
 function url(string $path = ''): string
 {
@@ -82,7 +82,7 @@ function url(string $path = ''): string
 }
 
 /**
- * Builds an asset URL with a cache-busting version based on the file modification time.
+ * Builds an asset URL with a cache-busting version based on the file modification time
  */
 function asset(string $path): string
 {
@@ -92,7 +92,7 @@ function asset(string $path): string
 }
 
 /**
- * Whether Google Analytics should load for the current request (production hosts only).
+ * Whether Google Analytics should load for the current request (production hosts only)
  */
 function analytics_enabled(): bool
 {
@@ -102,7 +102,7 @@ function analytics_enabled(): bool
 }
 
 /**
- * Escapes a value for safe HTML output.
+ * Escapes a value for safe HTML output
  */
 function e(?string $value): string
 {

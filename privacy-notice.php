@@ -7,7 +7,7 @@ $page = [
     'description' => 'Aviso de privacidad de CISMed: datos personales que recabamos en el sitio, finalidades, derechos ARCO y uso de cookies.',
 ];
 
-/** Sections of the notice, used for the table of contents. Keys are anchors. */
+/** Sections of the notice, used for the table of contents. Keys are anchors */
 $sections = [
     'responsible'    => 'Responsable de tus datos',
     'data-collected' => 'Datos personales que recabamos',

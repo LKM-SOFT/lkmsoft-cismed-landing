@@ -9,7 +9,7 @@
 require_once __DIR__ . '/config.php';
 
 /**
- * Universal WhatsApp chat URL with the prefilled message.
+ * Universal WhatsApp chat URL with the prefilled message
  */
 function whatsapp_url(): string
 {
@@ -17,7 +17,7 @@ function whatsapp_url(): string
 }
 
 /**
- * Link attributes: main.js builds the device-specific URL, analytics.js reports the click with its location.
+ * Link attributes: main.js builds the device-specific URL, analytics.js reports the click with its location
  */
 function whatsapp_link_attributes(string $location): string
 {
@@ -28,7 +28,7 @@ function whatsapp_link_attributes(string $location): string
 }
 
 /**
- * Inline WhatsApp logo (brand icons are not part of Lucide).
+ * Inline WhatsApp logo (brand icons are not part of Lucide)
  */
 function whatsapp_icon(string $class = ''): string
 {

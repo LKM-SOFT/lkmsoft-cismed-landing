@@ -1,6 +1,6 @@
 <?php
 /**
- * "Who is it for" section, shared by the home and specialties pages.
+ * "Who is it for" section, shared by the home and specialties pages
  */
 ?>
         <!-- audiences section start -->
@@ -14,7 +14,7 @@
                         <div class="theme-title">
                             <span class="subtitle" data-aos="fade-up" data-aos-duration="1000"><i data-lucide="users"></i>Para quién es</span>
                             <h2>Hecho para todo <span>el equipo del consultorio</span></h2>
-                            <p data-aos="fade-up" data-aos-duration="1000">Desde el médico que trabaja por su cuenta hasta la clínica con varios especialistas.</p>
+                            <p data-aos="fade-up" data-aos-duration="1000">Desde el médico que trabaja por su cuenta hasta la clínica con varios especialistas</p>
                         </div>
                         <ul class="why-choose-listing">
                             <?php foreach (AUDIENCES as $audience): ?>

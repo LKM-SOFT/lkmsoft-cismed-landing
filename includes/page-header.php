@@ -1,6 +1,6 @@
 <?php
 /**
- * Inner page header with breadcrumb. Expects $page['title'] and optional $page['heading'], $page['lead'].
+ * Inner page header with breadcrumb. Expects $page['title'] and optional $page['heading'], $page['lead']
  */
 ?>
         <!-- page header start -->

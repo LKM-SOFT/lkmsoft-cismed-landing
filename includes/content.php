@@ -1,10 +1,10 @@
 <?php
 /**
  * Product content shared across pages (home, features, specialties).
- * Only features confirmed in the CIS codebase are listed here.
+ * Only features confirmed in the CIS codebase are listed here
  */
 
-/** Shown wherever the consultation sheets are listed. */
+/** Shown wherever the consultation sheets are listed */
 const CONSULTATION_SHEETS_NOTE = 'Estamos incorporando más hojas de consulta especializadas para otras especialidades';
 
 const MODULES = [
@@ -282,14 +282,14 @@ const SPECIALTIES = [
 
 /**
  * Consultation sheets being built. The blurred suffix plus the loading placeholder in the card
- * signal "work in progress" without promising a date.
+ * signal "work in progress" without promising a date
  */
 const UPCOMING_SPECIALTIES = [
     ['icon' => 'droplets',    'prefix' => 'Nefro',  'suffix' => 'logía', 'title' => 'Nefrología'],
     ['icon' => 'bone',        'prefix' => 'Ortop',  'suffix' => 'edia',  'title' => 'Ortopedia'],
 ];
 
-/** Features listed in every plan card, in the same order as in the application. */
+/** Features listed in every plan card, in the same order as in the application */
 const PLAN_FEATURES = [
     'Agenda médica',
     'Integración con Google Calendar',
@@ -306,7 +306,7 @@ const PLAN_FEATURES = [
 
 /**
  * Licence plans. 'included' holds the number of features from PLAN_FEATURES that the plan covers;
- * the rest are shown as not included.
+ * the rest are shown as not included
  */
 const PLANS = [
     ['name' => 'Classic',  'price' => 400,  'doctors' => 1,  'assistants' => '1',         'included' => 8],
@@ -317,7 +317,7 @@ const PLANS = [
     ['name' => 'Black',    'price' => 7000, 'doctors' => 10, 'assistants' => 'Ilimitado', 'included' => 11],
 ];
 
-/** Billing cycles available for every plan. */
+/** Billing cycles available for every plan */
 const BILLING_CYCLES = ['Mensual', 'Trimestral', 'Semestral', 'Anual'];
 
 const AUDIENCES = [
@@ -328,7 +328,7 @@ const AUDIENCES = [
 ];
 
 /**
- * Frequently asked questions grouped by topic. Items marked 'featured' also appear on the home page.
+ * Frequently asked questions grouped by topic. Items marked 'featured' also appear on the home page
  */
 const FAQ_GROUPS = [
     [
@@ -350,7 +350,7 @@ const FAQ_GROUPS = [
         'items' => [
             ['q' => '¿Puedo configurar mi horario de consulta?', 'a' => 'Sí. Defines tu horario por especialidad, fijo o distinto para cada día, con la duración de las citas, un límite de pacientes por día, cupos extra y tus días no laborables'],
             ['q' => '¿Cómo se ve la agenda?', 'a' => 'Cada usuario elige entre la vista clásica y la vista de calendario por día o por semana. En el calendario puedes agendar con un clic en un espacio libre, y tus citas se sincronizan con Google Calendar'],
-            ['q' => '¿CISMed se integra con Google Calendar?', 'a' => 'Sí. Tus citas de CISMed se sincronizan con Google Calendar, así que las puedes consultar desde el calendario que ya usas en tu teléfono o computadora.'],
+            ['q' => '¿CISMed se integra con Google Calendar?', 'a' => 'Sí. Tus citas de CISMed se sincronizan con Google Calendar, así que las puedes consultar desde el calendario que ya usas en tu teléfono o computadora'],
             ['q' => '¿Se envían recordatorios de cita a los pacientes?', 'a' => 'Sí. CISMed envía recordatorios de cita por correo electrónico y WhatsApp, además de notificaciones internas para el equipo. El envío por WhatsApp está disponible según el plan contratado'],
             ['q' => '¿Funciona para clínicas con varios médicos?', 'a' => 'Sí. La clínica tiene una cuenta maestra, el administrador puede ver las agendas de varios médicos lado a lado y una cita se puede reprogramar con otro médico'],
             ['q' => '¿Cómo se registran los pacientes?', 'a' => 'El registro ofrece sugerencias y autocompletado, y la CURP del paciente se valida mediante un servicio externo'],
@@ -405,7 +405,7 @@ const FAQ_GROUPS = [
 ];
 
 /**
- * Returns the FAQ items marked as featured, across all groups.
+ * Returns the FAQ items marked as featured, across all groups
  */
 function featured_faqs(): array
 {
@@ -422,7 +422,7 @@ function featured_faqs(): array
 }
 
 /**
- * Returns the module with the given anchor.
+ * Returns the module with the given anchor
  */
 function module(string $anchor): array
 {

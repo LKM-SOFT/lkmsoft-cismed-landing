@@ -28,7 +28,7 @@ lucide.createIcons();
 document.addEventListener("DOMContentLoaded", () => {
   AOS.init({ once: true, disable: prefersReducedMotion });
 
-  // The template hides the hero title until it is animated.
+  // The template hides the hero title until it is animated
   const heroTitle = document.querySelector(".home-style1 h1");
   if (heroTitle) heroTitle.style.visibility = "visible";
 
@@ -101,7 +101,7 @@ window.addEventListener("scroll", () => {
 ==========================**/
 // iOS-style segmented control. On page load the active link is highlighted by CSS alone (no JS, no motion).
 // Only when the user picks another link does a pill appear over the current one and slide to the new link,
-// right before the new page loads.
+// right before the new page loads
 (() => {
   const nav = document.querySelector("[data-segmented-nav]");
   const pill = nav?.querySelector("[data-nav-pill]");
@@ -115,7 +115,7 @@ window.addEventListener("scroll", () => {
   const SLIDE_DURATION = 400;
   const SLIDE_EASING = "cubic-bezier(0.3, 0.7, 0.2, 1)";
 
-  /** Size and position of a link inside the navigation, as pill styles. */
+  /** Size and position of a link inside the navigation, as pill styles */
   const pillGeometry = (link) => {
     const navRect = nav.getBoundingClientRect();
     const linkRect = link.getBoundingClientRect();
@@ -140,12 +140,12 @@ window.addEventListener("scroll", () => {
     const from = pillGeometry(current || link);
     const to = pillGeometry(link);
 
-    // The pill replaces the static highlight and ends on the chosen link.
+    // The pill replaces the static highlight and ends on the chosen link
     Object.assign(pill.style, to);
     nav.classList.add("is-sliding");
     setActive(link);
 
-    // Explicit start and end keyframes, so it slides from the current link in either direction.
+    // Explicit start and end keyframes, so it slides from the current link in either direction
     if (current && !prefersReducedMotion) {
       pill.animate(
         [
@@ -170,7 +170,7 @@ window.addEventListener("scroll", () => {
     });
   });
 
-  // Coming back with the browser's back button restores this page from cache: show its original state.
+  // Coming back with the browser's back button restores this page from cache: show its original state
   window.addEventListener("pageshow", (event) => {
     if (!event.persisted) return;
     nav.classList.remove("is-sliding");
@@ -244,13 +244,13 @@ const HEADER_OFFSET = -100;
 if (!prefersReducedMotion) {
   window.lenis = new Lenis({
     autoRaf: true,
-    // Leave room for the sticky header when jumping to in-page anchors.
+    // Leave room for the sticky header when jumping to in-page anchors
     anchors: { offset: HEADER_OFFSET },
     allowNestedScroll: true,
   });
 }
 
-// Links from other pages (e.g. features#billing): jump to the section once the layout is ready.
+// Links from other pages (e.g. features#billing): jump to the section once the layout is ready
 window.addEventListener("load", () => {
   const target = window.location.hash && document.querySelector(window.location.hash);
   if (!target) return;
@@ -266,7 +266,7 @@ window.addEventListener("load", () => {
   8. WhatsApp links
 ==========================**/
 // The server renders a universal wa.me link. Here it is replaced by WhatsApp Web on desktop
-// and by the WhatsApp app on phones and tablets, keeping the prefilled message.
+// and by the WhatsApp app on phones and tablets, keeping the prefilled message
 (() => {
   const links = document.querySelectorAll("[data-whatsapp-link]");
   if (!links.length) return;
@@ -276,7 +276,7 @@ window.addEventListener("load", () => {
   const isMobile = /Android|iPhone|iPad|iPod|Mobile|Opera Mini|IEMobile/i.test(userAgent) || isIpadOs;
 
   links.forEach((link) => {
-    // encodeURIComponent writes spaces as %20; WhatsApp can show a literal "+" otherwise.
+    // encodeURIComponent writes spaces as %20; WhatsApp can show a literal "+" otherwise
     const query = `phone=${encodeURIComponent(link.dataset.whatsappPhone)}&text=${encodeURIComponent(link.dataset.whatsappText)}`;
 
     link.href = isMobile ? `https://api.whatsapp.com/send?${query}` : `https://web.whatsapp.com/send?${query}`;

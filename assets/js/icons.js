@@ -22,7 +22,7 @@
     return node;
   };
 
-  /** Replaces every <i data-lucide="name"> with its inline SVG, keeping the element's attributes. */
+  /** Replaces every <i data-lucide="name"> with its inline SVG, keeping the element's attributes */
   const createIcons = () => {
     document.querySelectorAll("[data-lucide]").forEach((element) => {
       if (element.tagName.toLowerCase() === "svg") return;

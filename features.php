@@ -3,7 +3,7 @@ $page = [
     'slug'        => 'features',
     'title'       => 'Funciones',
     'heading'     => 'Todo lo que tu consultorio necesita, en un solo sistema',
-    'lead'        => 'Conoce los módulos de CISMed: agenda médica, MediRed, notificaciones, pacientes, historia clínica, consultas, recetas, inventario, facturación CFDI y seguridad.',
+    'lead'        => 'Conoce los módulos de CISMed: agenda médica, MediRed, notificaciones, pacientes, historia clínica, consultas, recetas, inventario, facturación CFDI y seguridad',
     'description' => 'Funciones de CISMed: agenda médica con calendario, recordatorios por correo y WhatsApp, historia clínica, consultas por especialidad, recetas, inventario de medicamentos e insumos, facturación CFDI y seguridad de datos.',
 ];
 

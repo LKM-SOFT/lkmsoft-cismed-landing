@@ -213,12 +213,12 @@ require __DIR__ . '/includes/header.php';
                     $upcomingCount = (4 - count(SPECIALTIES) % 4) % 4 ?: 4;
                     ?>
                     <?php foreach (array_slice(UPCOMING_SPECIALTIES, 0, $upcomingCount) as $upcoming): ?>
-                        <!-- Hidden on phones: stacked one per row they only make the section longer. -->
+                        <!-- Hidden on phones: stacked one per row they only make the section longer -->
                         <div class="col-lg-3 col-sm-6 d-none d-sm-block" data-aos="fade-up" data-aos-duration="500">
                             <div class="specialty-card specialty-card-upcoming" aria-label="<?= e($upcoming['title']) ?>: hoja de consulta en desarrollo">
                                 <span class="specialty-icon"><i data-lucide="<?= e($upcoming['icon']) ?>"></i></span>
                                 <h3 aria-hidden="true"><?= e($upcoming['prefix']) ?><span class="text-unfinished"><?= e($upcoming['suffix']) ?></span></h3>
-                                <!-- Loading placeholder: the sheet for this specialty is still being built. -->
+                                <!-- Loading placeholder: the sheet for this specialty is still being built -->
                                 <div class="skeleton-lines" aria-hidden="true">
                                     <span></span>
                                     <span></span>
@@ -258,7 +258,7 @@ require __DIR__ . '/includes/header.php';
 
                 <div class="plans-summary-actions" data-aos="fade-up" data-aos-duration="600">
                     <a href="<?= url('plans') ?>" class="btn-main"><span>Ver qué incluye cada plan</span></a>
-                    <p>¿Necesitas algo diferente? <a href="<?= url('contact') ?>">Escríbenos</a> y lo revisamos contigo.</p>
+                    <p>¿Necesitas algo diferente? <a href="<?= url('contact') ?>">Escríbenos</a> y lo revisamos contigo</p>
                 </div>
             </div>
         </section>
