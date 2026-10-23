@@ -8,7 +8,7 @@
 /*
     1. Event helper
     2. Cookie consent banner
-    3. Events: WhatsApp and email clicks
+    3. Events: WhatsApp, account, MediRed and email clicks
 */
 
 (() => {
@@ -73,7 +73,7 @@
   });
 
   /**=====================
-    3. Events: WhatsApp and email clicks
+    3. Events: WhatsApp, account, MediRed and email clicks
   ==========================**/
   document.addEventListener("click", (event) => {
     const link = event.target.closest("a");
@@ -86,6 +86,11 @@
 
     if (link.hasAttribute("data-account-link")) {
       window.trackEvent("create_account_click", { link_location: link.dataset.trackLocation || "unknown" });
+      return;
+    }
+
+    if (link.hasAttribute("data-medired-link")) {
+      window.trackEvent("medired_click", { link_location: link.dataset.trackLocation || "unknown" });
       return;
     }
 

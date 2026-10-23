@@ -3,7 +3,7 @@ $page = [
     'slug'        => 'features',
     'title'       => 'Funciones',
     'heading'     => 'Todo lo que tu consultorio necesita, en un solo sistema',
-    'lead'        => 'Conoce los módulos de CISMed: agenda médica, notificaciones, pacientes, historia clínica, consultas, recetas, inventario, facturación CFDI y seguridad.',
+    'lead'        => 'Conoce los módulos de CISMed: agenda médica, MediRed, notificaciones, pacientes, historia clínica, consultas, recetas, inventario, facturación CFDI y seguridad.',
     'description' => 'Funciones de CISMed: agenda médica con calendario, recordatorios por correo y WhatsApp, historia clínica, consultas por especialidad, recetas, inventario de medicamentos e insumos, facturación CFDI y seguridad de datos.',
 ];
 
@@ -46,6 +46,8 @@ require __DIR__ . '/includes/page-header.php';
                                 </ul>
                                 <?php if ($module['anchor'] === 'consultations'): ?>
                                     <a href="<?= url('specialties') ?>" class="btn-outline mt-4" data-aos="fade-up" data-aos-duration="800"><span>Ver especialidades</span></a>
+                                <?php elseif ($module['anchor'] === 'medired'): ?>
+                                    <a <?= medired_link_attributes('features_page') ?> class="btn-outline mt-4" data-aos="fade-up" data-aos-duration="800"><span>Conoce MediRed</span></a>
                                 <?php endif; ?>
                             </div>
                             <div class="col-lg-6<?= $isReversed ? ' order-lg-0' : '' ?>">

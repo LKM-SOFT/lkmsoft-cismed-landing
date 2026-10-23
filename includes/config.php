@@ -21,6 +21,9 @@ const SITE_URL = 'https://cismed.mx';
 const GA_MEASUREMENT_ID = 'G-YZ7V24DNB5';
 const ANALYTICS_HOSTS = ['cismed.mx', 'www.cismed.mx'];
 
+// MediRed, LKM Soft's online medical directory. Included in every CISMed plan; the landing only links to it.
+const MEDIRED_URL = 'https://medired.mx';
+
 // CIS application (sign-up lives there, not in the landing).
 const APP_URL_PRODUCTION = 'https://app.cismed.mx';
 const APP_URL_LOCAL = 'https://sandbox.cismed.mx'; // http://localhost:8090
