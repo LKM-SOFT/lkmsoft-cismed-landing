@@ -58,7 +58,6 @@ existing code contradicts it, say so before acting instead of silently following
 | Contacto | `contact.php` | Contact form (`actions/send-contact.php`), email and WhatsApp |
 | Aviso de privacidad | `privacy-notice.php` | Approved by the owner; dated 01/09/2026 |
 | 404 | `404.php` | `ErrorDocument 404` |
-| (old) | `coming-soon.php` | The page before the launch; not linked (constitution, decision 4) |
 
 ### Current state (2026-10-23)
 
@@ -75,7 +74,9 @@ existing code contradicts it, say so before acting instead of silently following
   owner chose to publish it anyway.
 - Promo flyer and Facebook cover (outside git, `resource-tmp-folder/promo`, `resource-tmp-folder/social`)
   are up to date with the content above.
-- Open decisions: constitution section 11.
+- Specifications of every feature: `docs/specs/` (plans, consultation sheets, MediRed, contact form,
+  analytics, privacy notice).
+- No decision is open in the constitution (section 11).
 
 ---
 

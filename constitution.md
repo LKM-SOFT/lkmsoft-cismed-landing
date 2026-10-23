@@ -8,9 +8,11 @@ is wrong.
 The constitution is versioned with the code. Changing a rule is a deliberate decision of the
 repository owner, recorded in the [amendment log](#amendment-log), never a side effect of a feature.
 
-> **Status: version 1.0.** It writes down the rules agreed with the owner while the landing was built
-> (September and October 2026). An item listed in [section 11](#11-open-decisions) is not decided
-> yet: until the owner decides it, it is **Ask first**.
+> **Status: version 1.1.** It writes down the rules agreed with the owner while the landing was built
+> (September and October 2026), and the four decisions of 2026-10-23: texts without a final period,
+> specifications in `docs/specs/`, the template license, and the removal of the coming soon page. An
+> item listed in [section 11](#11-open-decisions) is not decided yet: until the owner decides it, it
+> is **Ask first**.
 
 ---
 
@@ -37,7 +39,7 @@ repository is in English.
 | Language | PHP, no framework, no Composer | 8.4 (the version `PR - Checks` lints with) |
 | Web server | Apache with `.htaccess` (clean URLs, HTTPS, canonical host), on IONOS | 2.4 (WAMP locally) |
 | Deployment and CI | GitHub Actions: checks on every pull request, rsync to IONOS on every push to `main` | — |
-| Template | Curoxa (Bootstrap 5 telehealth template), Standard license | 1.0.0 |
+| Template | Curoxa (Bootstrap 5 telehealth template), licensed for CISMed | 1.0.0 |
 | CSS | Bootstrap, template `style.css`, site stylesheet on top | 5.3.3 |
 | Animation | AOS, GSAP + ScrollTrigger, SplitType, Lenis (smooth scroll) | GSAP 3.14.2, SplitType 0.3.4 |
 | Icons | Lucide, as a generated subset (`tools/build-icons.js`) | 0.577.0 |
@@ -47,7 +49,7 @@ repository is in English.
 
 The stack is closed: a new library, framework, build tool, package manager or external service is an
 [Ask first](#9-boundaries) decision. jQuery, Swiper, SlimSelect and the other template scripts are
-**not** part of the site (jQuery remains only for the old `coming-soon.php`).
+**not** part of the site.
 
 ## 3. Project structure
 
@@ -73,6 +75,7 @@ The stack is closed: a new library, framework, build tool, package manager or ex
 │   └── images/           brand/ (SVG logos), mockups/ (SVG mock screens), template/
 ├── tools/                Icon builder; not deployed
 ├── .github/workflows/    PR - Checks, deployment to IONOS
+├── docs/specs/           One specification per feature; not deployed
 ├── resource-tmp-folder/  Licensed template, briefs, promo and social images — never committed
 ├── robots.txt, sitemap.xml
 └── .htaccess             Server rules (6.9)
@@ -89,8 +92,19 @@ markup, so one edit updates every page:
 - `BILLING_CYCLES`, `AUDIENCES`, `FAQ_GROUPS` (`'featured'` items also appear on the home page);
 - the WhatsApp number and message, the contact email, the CISMed and MediRed URLs and the GA4 id.
 
-Briefs from the owner (the landing brief, the MediRed brief) live in `resource-tmp-folder/`. There is
-no `docs/specs/` yet (section 11).
+**Specifications** live in `docs/specs/<feature>.md`, in English, always (owner's decision,
+2026-10-23):
+
+- what the feature does and why, its rules, where it is shown, and the decisions taken with the owner,
+  each one written down once it is agreed;
+- a change that alters a rule of a feature, or takes a new decision about it, updates its
+  specification in the same change, and a new feature gets its specification in the change that
+  adds it;
+- a specification that no longer says what the site does is as wrong as a broken page: fix whichever
+  of the two is wrong, never leave them apart.
+
+Briefs from the owner (the landing brief, the MediRed brief) live in `resource-tmp-folder/`, outside
+git; what is agreed from them is written into the specification.
 
 ## 4. Commands
 
@@ -132,6 +146,16 @@ says exactly what was run:
   first plan that proposed Spanish file names.
 - **Only text the visitor reads is in Spanish (Mexico)**: headings, copy, labels, buttons,
   validation messages, `alt` texts and the emails sent to people.
+- **No final period**, as in MediRed (owner's decision, 2026-10-23). A text ends without a period:
+  what the visitor reads in Spanish (headings, leads, messages, labels, notes, buttons, validation
+  errors, the emails the site sends) and, in English, log lines, PHPDoc and every comment, in PHP,
+  JavaScript, CSS and HTML. A period between two sentences of the same text stays, and so does each
+  paragraph's own when a comment has several; a text that ends in «?», «!» or «…» keeps its sign, and
+  an abbreviation keeps its dot («Dr.», «e.g.»).
+  - **Exceptions:** the legal documents (the privacy notice) and the meta descriptions, which are
+    prose; and the documentation (`docs/`, this file, `CLAUDE.md`) and commit messages, which keep
+    ordinary punctuation. A specification quotes each text as the page shows it.
+  - The comments of `.htaccess` are left as they are (6.9).
 - **Content is never invented.** No figures (doctors, patients, appointments, cities), testimonials,
   client logos, certifications (NOM-024 or any other), awards or features that do not exist. Where a
   piece of content is missing, ask, or leave a visible `[DATO PENDIENTE]` marker.
@@ -308,6 +332,8 @@ says exactly what was run:
 - Write English in the repository and Spanish (Mexico) in the UI.
 - Keep content in the constants of `includes/content.php` and `includes/config.php`.
 - Put every style change in `cismed.css` and rebuild `icons.js` after touching an icon.
+- End texts and comments without a period (6.1).
+- Keep the specification of a feature in `docs/specs` in step with it, in the same change.
 - Update the promo and social images when the content they show changes.
 - Fetch and bring local `main` up to `origin/main` before creating a branch or committing, and
   create branches as `feature/*` or `hotfix/*` from it.
@@ -348,17 +374,15 @@ says exactly what was run:
 ## 11. Open decisions
 
 Each item is decided with the owner, written into the right section above, and removed from this
-list in the same change. Items keep their number once removed.
+list in the same change. Items keep their number once removed, so a reference such as "decision 2"
+stays valid. Items 1 (final period), 2 (specifications), 3 (template license) and 4 (the coming soon
+page, removed with its jQuery and images) were decided on 2026-10-23.
 
-| # | Decision | Why it matters |
-|---|---|---|
-| 1 | **Final period:** MediRed ends its texts and comments without a period (its constitution 6.1). The landing is mixed today: leads and FAQ answers without one, meta descriptions and some leads with one. | Decides whether the landing follows MediRed's rule and is cleaned up. |
-| 2 | **Specifications:** whether the landing keeps specifications in `docs/specs/` (the deployment already leaves `docs/` out) or relies on CISMed's and on the briefs. | Decides where agreed texts and decisions are written down. |
-| 3 | **Template license:** the Standard license covers one end product; MediRed was licensed on its own. Confirm the landing's license covers its use as it is. | Licensing. |
-| 4 | **`coming-soon.php`** and its jQuery and `assets/src/` files: whether they are still needed. | They are deployed but not linked. |
+No decision is open. A new one is added here, with the next number, when it comes up.
 
 ### Amendment log
 
 | Version | Date | Change |
 |---|---|---|
 | 1.0 | 2026-10-23 | First version, written from the rules agreed with the owner while the landing was built, after MediRed's constitution: English code and Spanish UI, no invented content, product facts from CISMed, MediRed only presented and linked, `.htaccess` preserved, PHPMailer through IONOS, analytics with Consent Mode, `feature/*` and `hotfix/*` branches into `main` checked by `PR - Checks`, deployment to IONOS. |
+| 1.1 | 2026-10-23 | The four open decisions, taken by the owner: texts and comments end without a period, as in MediRed (6.1, 9); specifications always in `docs/specs/` (3, 9); Curoxa licensed for CISMed (2); the coming soon page and its files removed (2). |
