@@ -156,6 +156,39 @@ require __DIR__ . '/includes/header.php';
         </section>
         <!-- agenda section end -->
 
+        <?php $medired = module('medired'); ?>
+        <!-- medired section start -->
+        <section class="feature-showcase medired-showcase section-b-space" id="medired">
+            <div class="container">
+                <div class="row g-4 g-lg-5 align-items-center">
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="theme-title text-start">
+                            <span class="subtitle" data-aos="fade-up" data-aos-duration="1000"><i data-lucide="map-pin"></i>Incluido en todos los planes</span>
+                            <h2>Tus pacientes te encuentran <span>en MediRed</span></h2>
+                            <p data-aos="fade-up" data-aos-duration="1000"><?= e($medired['intro']) ?></p>
+                        </div>
+                        <ul class="check-list" data-aos="fade-up" data-aos-duration="800">
+                            <?php foreach (array_slice($medired['points'], 0, 3) as $point): ?>
+                                <li><i data-lucide="check"></i><span><?= e($point) ?></span></li>
+                            <?php endforeach; ?>
+                        </ul>
+                        <a <?= medired_link_attributes('home_section') ?> class="btn-main mt-4" data-aos="fade-up" data-aos-duration="800"><span>Conoce MediRed</span></a>
+                    </div>
+                    <div class="col-lg-6 order-lg-0">
+                        <div class="feature-visual" data-aos="fade-right" data-aos-duration="1000" aria-hidden="true">
+                            <span class="feature-visual-icon"><i data-lucide="map-pin"></i></span>
+                            <ul class="feature-visual-tags">
+                                <?php foreach ($medired['tags'] as $tag): ?>
+                                    <li><i data-lucide="check"></i><?= e($tag) ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- medired section end -->
+
         <!-- specialties section start -->
         <section class="specialties-section section-t-space section-b-space" id="specialties">
             <div class="container">
@@ -208,7 +241,7 @@ require __DIR__ . '/includes/header.php';
                     <p data-aos="fade-up" data-aos-duration="1000">
                         Tenemos <?= count(PLANS) ?> planes, desde $<?= number_format(PLANS[0]['price']) ?> MXN al mes con IVA incluido, para consultorios de
                         <?= e((string) PLANS[0]['doctors']) ?> hasta <?= e((string) PLANS[count(PLANS) - 1]['doctors']) ?> médicos.
-                        Puedes pagarlos en modalidad mensual, trimestral, semestral o anual, con distintos descuentos según la que elijas
+                        Todos incluyen MediRed, el directorio médico online. Puedes pagarlos en modalidad mensual, trimestral, semestral o anual, con distintos descuentos según la que elijas
                     </p>
                 </div>
 

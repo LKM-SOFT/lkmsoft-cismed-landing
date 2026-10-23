@@ -29,6 +29,25 @@ const MODULES = [
         'image'   => ['src' => 'images/mockups/agenda-week.svg', 'width' => 760, 'height' => 560, 'alt' => 'Vista semanal de la agenda de CISMed'],
     ],
     [
+        'anchor'  => 'medired',
+        'icon'    => 'map-pin',
+        'title'   => 'MediRed',
+        'summary' => 'Tus pacientes te encuentran y agendan en línea en el directorio médico de LKM Soft',
+        'heading' => 'Tus pacientes te encuentran en MediRed',
+        'intro'   => 'Todos los planes de CISMed incluyen MediRed, el directorio médico online: los pacientes ven tu perfil y tus horarios libres, y agendan en línea. La cita llega directo a tu agenda',
+        'points'  => [
+            'Perfil público con tus especialidades, consultorios y precios, solo con los datos que eliges publicar',
+            'Citas en línea que llegan directo a tu agenda de CISMed',
+            'Opiniones de pacientes verificados, solo de citas atendidas',
+            'Calificación de Google de tu consultorio, si vinculas su ficha',
+            'Posición patrocinada opcional en las búsquedas de tu especialidad en tu estado',
+            'Se activa desde CISMed, en la página «MediRed» del menú de tu cuenta',
+        ],
+        'tags'    => ['Perfil público', 'Citas en línea', 'Pacientes verificados'],
+        // Presented on the home page in its own section, not in the modules grid
+        'home'    => false,
+    ],
+    [
         'anchor'  => 'notifications',
         'icon'    => 'bell-ring',
         'title'   => 'Notificaciones',
@@ -89,6 +108,7 @@ const MODULES = [
             'Hoja de consulta de estomatología, con odontograma',
             'Hoja de consulta de oftalmología, con examen optométrico, segmento anterior, fondo de ojo y graduación de lentes',
             'Hoja de consulta de nutrición, con antropometría, recordatorio de 24 horas y plan de alimentación por equivalentes',
+            'Hoja de consulta de cardiología, con riesgo cardiovascular, electrocardiograma, ecocardiograma y evolución del paciente',
             'Historial de consultas del paciente',
             'Estadísticas de consultas',
             'Gráficas de crecimiento',
@@ -242,6 +262,22 @@ const SPECIALTIES = [
             'Evolución del paciente',
         ],
     ],
+    [
+        'slug'    => 'cardiology',
+        'icon'    => 'heart-pulse',
+        'title'   => 'Cardiología',
+        'summary' => 'Riesgo cardiovascular, electrocardiograma, ecocardiograma y evolución del paciente',
+        'intro'   => 'Registra los antecedentes, la exploración y los estudios cardiovasculares de tu paciente, y calcula su riesgo cardiovascular con la Guía de Práctica Clínica IMSS-233-09',
+        'points'  => [
+            'Hoja de consulta de cardiología, para Cardiología y Cardiología Intervencionista',
+            'Antecedentes y factores de riesgo cardiovascular, que se retoman en la siguiente consulta',
+            'Exploración cardiovascular, electrocardiograma y ecocardiograma',
+            'Riesgo cardiovascular con la tabla Globorisk, con la meta de colesterol LDL de su categoría',
+            'Intervalo de vigilancia según el diámetro de la aorta abdominal',
+            'Laboratorio compartido con la hoja de nutrición',
+            'Evolución de presión arterial, peso, IMC, colesterol LDL y fracción de expulsión',
+        ],
+    ],
 ];
 
 /**
@@ -249,7 +285,6 @@ const SPECIALTIES = [
  * signal "work in progress" without promising a date.
  */
 const UPCOMING_SPECIALTIES = [
-    ['icon' => 'heart-pulse', 'prefix' => 'Cardio', 'suffix' => 'logía', 'title' => 'Cardiología'],
     ['icon' => 'droplets',    'prefix' => 'Nefro',  'suffix' => 'logía', 'title' => 'Nefrología'],
     ['icon' => 'bone',        'prefix' => 'Ortop',  'suffix' => 'edia',  'title' => 'Ortopedia'],
 ];
@@ -258,6 +293,7 @@ const UPCOMING_SPECIALTIES = [
 const PLAN_FEATURES = [
     'Agenda médica',
     'Integración con Google Calendar',
+    'Perfil y citas en línea en MediRed',
     'Consulta externa y hojas de consulta especializadas',
     'Receta electrónica',
     'Almacenamiento ilimitado en la nube',
@@ -273,12 +309,12 @@ const PLAN_FEATURES = [
  * the rest are shown as not included.
  */
 const PLANS = [
-    ['name' => 'Classic',  'price' => 400,  'doctors' => 1,  'assistants' => '1',         'included' => 7],
-    ['name' => 'Master',   'price' => 1000, 'doctors' => 2,  'assistants' => '2',         'included' => 8],
-    ['name' => 'Premium',  'price' => 2100, 'doctors' => 3,  'assistants' => 'Ilimitado', 'included' => 10],
-    ['name' => 'Gold',     'price' => 3500, 'doctors' => 5,  'assistants' => 'Ilimitado', 'included' => 10],
-    ['name' => 'Platinum', 'price' => 4900, 'doctors' => 7,  'assistants' => 'Ilimitado', 'included' => 10],
-    ['name' => 'Black',    'price' => 7000, 'doctors' => 10, 'assistants' => 'Ilimitado', 'included' => 10],
+    ['name' => 'Classic',  'price' => 400,  'doctors' => 1,  'assistants' => '1',         'included' => 8],
+    ['name' => 'Master',   'price' => 1000, 'doctors' => 2,  'assistants' => '2',         'included' => 9],
+    ['name' => 'Premium',  'price' => 2100, 'doctors' => 3,  'assistants' => 'Ilimitado', 'included' => 11],
+    ['name' => 'Gold',     'price' => 3500, 'doctors' => 5,  'assistants' => 'Ilimitado', 'included' => 11],
+    ['name' => 'Platinum', 'price' => 4900, 'doctors' => 7,  'assistants' => 'Ilimitado', 'included' => 11],
+    ['name' => 'Black',    'price' => 7000, 'doctors' => 10, 'assistants' => 'Ilimitado', 'included' => 11],
 ];
 
 /** Billing cycles available for every plan. */
@@ -326,7 +362,7 @@ const FAQ_GROUPS = [
         'title' => 'Expediente y consultas',
         'items' => [
             ['q' => '¿Qué incluye la historia clínica?', 'a' => 'Hoja frontal; antecedentes heredofamiliares, patológicos, no patológicos, familiares y sociales; antecedentes ginecológicos y gineco-obstétricos; desarrollo motor; contactos del paciente y cartilla de vacunación basada en las cartillas oficiales vigentes'],
-            ['q' => '¿Qué especialidades tienen hoja de consulta?', 'a' => 'CISMed incluye la hoja de consulta general y hojas de consulta especializadas: ginecología, con control prenatal y diagnóstico de climaterio; pediatría; estomatología, con odontograma; oftalmología, con examen optométrico, segmento anterior, fondo de ojo y graduación de lentes, y nutrición, con antropometría, recordatorio de 24 horas, plan de alimentación por equivalentes y evolución del paciente. También hay historial de consultas, estadísticas y gráficas de crecimiento. ' . CONSULTATION_SHEETS_NOTE],
+            ['q' => '¿Qué especialidades tienen hoja de consulta?', 'a' => 'CISMed incluye la hoja de consulta general y hojas de consulta especializadas: ginecología, con control prenatal y diagnóstico de climaterio; pediatría; estomatología, con odontograma; oftalmología, con examen optométrico, segmento anterior, fondo de ojo y graduación de lentes; nutrición, con antropometría, recordatorio de 24 horas, plan de alimentación por equivalentes y evolución del paciente, y cardiología, con riesgo cardiovascular, electrocardiograma, ecocardiograma, aorta abdominal y evolución del paciente. También hay historial de consultas, estadísticas y gráficas de crecimiento. ' . CONSULTATION_SHEETS_NOTE],
             ['q' => '¿Puedo usar mi propio formato de receta?', 'a' => 'Sí. Cada médico configura el formato de receta que usa en su práctica'],
         ],
     ],
@@ -346,6 +382,16 @@ const FAQ_GROUPS = [
         'items' => [
             ['q' => '¿Cómo se protegen los datos de mis pacientes?', 'a' => 'Los datos personales sensibles se cifran conforme a la LFPDPPP. Además hay roles y niveles de acceso por pantalla, OTP, PIN, registro de dispositivos, control de intentos de acceso y bitácora de auditoría', 'featured' => true],
             ['q' => '¿Puedo controlar qué ve cada persona de mi equipo?', 'a' => 'Sí. Los roles y niveles de acceso se definen por pantalla, y la bitácora de auditoría registra la actividad en el sistema'],
+        ],
+    ],
+    [
+        'id'    => 'medired',
+        'icon'  => 'map-pin',
+        'title' => 'MediRed',
+        'items' => [
+            ['q' => '¿Qué es MediRed?', 'a' => 'Es el directorio médico online de LKM Soft, la empresa que desarrolla CISMed. Los pacientes buscan médico por especialidad, ubicación, nombre, aseguradora o padecimiento, ven su perfil y agendan una cita en línea en medired.mx'],
+            ['q' => '¿Cómo aparezco en MediRed?', 'a' => 'Todos los planes de CISMed lo incluyen. En CISMed, en la página «MediRed» del menú de tu cuenta, completas tu perfil, eliges qué datos publicar y activas «Aparecer en MediRed»'],
+            ['q' => '¿Los pacientes pueden agendar conmigo en línea?', 'a' => 'Sí. En tu perfil de MediRed ven tus horarios libres y agendan en línea, y la cita llega directo a tu agenda de CISMed'],
         ],
     ],
     [
@@ -373,4 +419,18 @@ function featured_faqs(): array
     }
 
     return $featured;
+}
+
+/**
+ * Returns the module with the given anchor.
+ */
+function module(string $anchor): array
+{
+    foreach (MODULES as $module) {
+        if ($module['anchor'] === $anchor) {
+            return $module;
+        }
+    }
+
+    throw new InvalidArgumentException('Unknown module: ' . $anchor);
 }

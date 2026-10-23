@@ -34,6 +34,7 @@
                                 <li><a href="<?= url('contact') ?>">Contacto</a></li>
                                 <li><a href="mailto:<?= e(CONTACT_EMAIL) ?>"><?= e(CONTACT_EMAIL) ?></a></li>
                                 <li><a <?= whatsapp_link_attributes('footer') ?>>WhatsApp <?= e(WHATSAPP_DISPLAY) ?></a></li>
+                                <li><a <?= medired_link_attributes('footer') ?>>MediRed, directorio médico</a></li>
                             </ul>
                         </div>
                         <div class="footer-links">

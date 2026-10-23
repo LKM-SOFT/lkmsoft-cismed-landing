@@ -26,6 +26,16 @@ function account_link_attributes(string $location): string
 }
 
 /**
+ * Link attributes for MediRed: it is a separate site, so it opens in a new tab.
+ * analytics.js reports the click with the given location.
+ */
+function medired_link_attributes(string $location): string
+{
+    return 'href="' . e(MEDIRED_URL) . '" target="_blank" rel="noopener"'
+        . ' data-medired-link data-track-location="' . e($location) . '"';
+}
+
+/**
  * Renders the CISMed logo (symbol + wordmark).
  * Use "dark" on light backgrounds (gray symbol) and "light" on dark backgrounds (white symbol).
  */
